@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Pornjate\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Pornjate\\.nuget\\packages"
+    ]
+  }
+}

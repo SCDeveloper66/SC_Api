@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StandardCanModelStoreContainer" CdmEntityContainer="StandardCanEntities">
+    <FunctionImportMapping FunctionImportName="sp_hardware_search" FunctionName="StandardCanModel.Store.sp_hardware_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_hardware_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="data1" ColumnName="data1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_hardware_insert" FunctionName="StandardCanModel.Store.sp_hardware_insert" />
+    <FunctionImportMapping FunctionImportName="sp_hardware_update" FunctionName="StandardCanModel.Store.sp_hardware_update" />
+    <FunctionImportMapping FunctionImportName="sp_hardware_delete" FunctionName="StandardCanModel.Store.sp_hardware_delete" />
+    <FunctionImportMapping FunctionImportName="sp_expert_search" FunctionName="StandardCanModel.Store.sp_expert_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_expert_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_expert_delete" FunctionName="StandardCanModel.Store.sp_expert_delete" />
+    <FunctionImportMapping FunctionImportName="sp_expert_insert" FunctionName="StandardCanModel.Store.sp_expert_insert" />
+    <FunctionImportMapping FunctionImportName="sp_expert_update" FunctionName="StandardCanModel.Store.sp_expert_update" />
+    <FunctionImportMapping FunctionImportName="sp_expense_delete" FunctionName="StandardCanModel.Store.sp_expense_delete" />
+    <FunctionImportMapping FunctionImportName="sp_expense_insert" FunctionName="StandardCanModel.Store.sp_expense_insert" />
+    <FunctionImportMapping FunctionImportName="sp_expense_search" FunctionName="StandardCanModel.Store.sp_expense_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_expense_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_expense_update" FunctionName="StandardCanModel.Store.sp_expense_update" />
+    <FunctionImportMapping FunctionImportName="sp_destination_delete" FunctionName="StandardCanModel.Store.sp_destination_delete" />
+    <FunctionImportMapping FunctionImportName="sp_destination_insert" FunctionName="StandardCanModel.Store.sp_destination_insert" />
+    <FunctionImportMapping FunctionImportName="sp_destination_search" FunctionName="StandardCanModel.Store.sp_destination_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_destination_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_destination_update" FunctionName="StandardCanModel.Store.sp_destination_update" />
+    <FunctionImportMapping FunctionImportName="sp_room_delete" FunctionName="StandardCanModel.Store.sp_room_delete" />
+    <FunctionImportMapping FunctionImportName="sp_room_insert" FunctionName="StandardCanModel.Store.sp_room_insert" />
+    <FunctionImportMapping FunctionImportName="sp_room_search" FunctionName="StandardCanModel.Store.sp_room_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_room_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_room_update" FunctionName="StandardCanModel.Store.sp_room_update" />
+    <FunctionImportMapping FunctionImportName="sp_cartype_delete" FunctionName="StandardCanModel.Store.sp_cartype_delete" />
+    <FunctionImportMapping FunctionImportName="sp_cartype_insert" FunctionName="StandardCanModel.Store.sp_cartype_insert" />
+    <FunctionImportMapping FunctionImportName="sp_cartype_search" FunctionName="StandardCanModel.Store.sp_cartype_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_cartype_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_cartype_update" FunctionName="StandardCanModel.Store.sp_cartype_update" />
+    <FunctionImportMapping FunctionImportName="sp_car_delete" FunctionName="StandardCanModel.Store.sp_car_delete" />
+    <FunctionImportMapping FunctionImportName="sp_car_insert" FunctionName="StandardCanModel.Store.sp_car_insert" />
+    <FunctionImportMapping FunctionImportName="sp_car_search" FunctionName="StandardCanModel.Store.sp_car_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_car_search_Result">
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_car_update" FunctionName="StandardCanModel.Store.sp_car_update" />
+    <FunctionImportMapping FunctionImportName="sp_cancelRoom_update" FunctionName="StandardCanModel.Store.sp_cancelRoom_update" />
+    <FunctionImportMapping FunctionImportName="sp_configmeeting_delete" FunctionName="StandardCanModel.Store.sp_configmeeting_delete" />
+    <FunctionImportMapping FunctionImportName="sp_configmeeting_insert" FunctionName="StandardCanModel.Store.sp_configmeeting_insert" />
+    <FunctionImportMapping FunctionImportName="sp_configmeeting_search" FunctionName="StandardCanModel.Store.sp_configmeeting_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_configmeeting_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timelimit" ColumnName="timelimit" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="score" ColumnName="score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_configmeeting_update" FunctionName="StandardCanModel.Store.sp_configmeeting_update" />
+    <FunctionImportMapping FunctionImportName="sp_holiday_search" FunctionName="StandardCanModel.Store.sp_holiday_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_holiday_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_traindestination_delete" FunctionName="StandardCanModel.Store.sp_traindestination_delete" />
+    <FunctionImportMapping FunctionImportName="sp_traindestination_insert" FunctionName="StandardCanModel.Store.sp_traindestination_insert" />
+    <FunctionImportMapping FunctionImportName="sp_traindestination_search" FunctionName="StandardCanModel.Store.sp_traindestination_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_traindestination_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_traindestination_update" FunctionName="StandardCanModel.Store.sp_traindestination_update" />
+    <FunctionImportMapping FunctionImportName="sp_sh_search" FunctionName="StandardCanModel.Store.sp_sh_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_sh_search_Result">
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_depart_search" FunctionName="StandardCanModel.Store.sp_depart_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_depart_search_Result">
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_search" FunctionName="StandardCanModel.Store.sp_emp_profile_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_search_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="emp_title" ColumnName="emp_title" />
+          <ScalarProperty Name="emp_fname" ColumnName="emp_fname" />
+          <ScalarProperty Name="emp_lname" ColumnName="emp_lname" />
+          <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+          <ScalarProperty Name="md_name" ColumnName="md_name" />
+          <ScalarProperty Name="emp_level" ColumnName="emp_level" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tab1" FunctionName="StandardCanModel.Store.sp_emp_profile_tab1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tab1_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+          <ScalarProperty Name="md_name" ColumnName="md_name" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="start_work" ColumnName="start_work" />
+          <ScalarProperty Name="age_work" ColumnName="age_work" />
+          <ScalarProperty Name="book_permit" ColumnName="book_permit" />
+          <ScalarProperty Name="book_permit_expire" ColumnName="book_permit_expire" />
+          <ScalarProperty Name="boss_name" ColumnName="boss_name" />
+          <ScalarProperty Name="boss_tel" ColumnName="boss_tel" />
+          <ScalarProperty Name="sc_credit" ColumnName="sc_credit" />
+          <ScalarProperty Name="level_work" ColumnName="level_work" />
+          <ScalarProperty Name="social_security" ColumnName="social_security" />
+          <ScalarProperty Name="fund" ColumnName="fund" />
+          <ScalarProperty Name="cooperative" ColumnName="cooperative" />
+          <ScalarProperty Name="card_id" ColumnName="card_id" />
+          <ScalarProperty Name="card_id_expire" ColumnName="card_id_expire" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="religion" ColumnName="religion" />
+          <ScalarProperty Name="salary_account" ColumnName="salary_account" />
+          <ScalarProperty Name="blood_type" ColumnName="blood_type" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lineid" ColumnName="lineid" />
+          <ScalarProperty Name="current_address" ColumnName="current_address" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tab2" FunctionName="StandardCanModel.Store.sp_emp_profile_tab2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tab2_Result">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="time_in" ColumnName="time_in" />
+          <ScalarProperty Name="time_in_status" ColumnName="time_in_status" />
+          <ScalarProperty Name="time_out" ColumnName="time_out" />
+          <ScalarProperty Name="time_out_status" ColumnName="time_out_status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tab3" FunctionName="StandardCanModel.Store.sp_emp_profile_tab3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tab3_Result">
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="total_day" ColumnName="total_day" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="appr_status" ColumnName="appr_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tab3_quota" FunctionName="StandardCanModel.Store.sp_emp_profile_tab3_quota">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tab3_quota_Result">
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="cumulative" ColumnName="cumulative" />
+          <ScalarProperty Name="present" ColumnName="present" />
+          <ScalarProperty Name="use" ColumnName="use" />
+          <ScalarProperty Name="net" ColumnName="net" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabnote_search" FunctionName="StandardCanModel.Store.sp_emp_profile_tabnote_search" />
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabnote_update" FunctionName="StandardCanModel.Store.sp_emp_profile_tabnote_update" />
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabcard_search" FunctionName="StandardCanModel.Store.sp_emp_profile_tabcard_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tabcard_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="card_no" ColumnName="card_no" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabcard_update" FunctionName="StandardCanModel.Store.sp_emp_profile_tabcard_update" />
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabwork_search" FunctionName="StandardCanModel.Store.sp_emp_profile_tabwork_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tabwork_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="no2" ColumnName="no2" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabwork_delete" FunctionName="StandardCanModel.Store.sp_emp_profile_tabwork_delete" />
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabwork_update" FunctionName="StandardCanModel.Store.sp_emp_profile_tabwork_update" />
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabbehavior_search" FunctionName="StandardCanModel.Store.sp_emp_profile_tabbehavior_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tabbehavior_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="score" ColumnName="score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabbehavior_search_v2" FunctionName="StandardCanModel.Store.sp_emp_profile_tabbehavior_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tabbehavior_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="score" ColumnName="score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabbehavior_delete" FunctionName="StandardCanModel.Store.sp_emp_profile_tabbehavior_delete" />
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tabbehavior_update" FunctionName="StandardCanModel.Store.sp_emp_profile_tabbehavior_update" />
+    <FunctionImportMapping FunctionImportName="sp_department_search" FunctionName="StandardCanModel.Store.sp_department_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_department_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="dis_status" ColumnName="dis_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_department_update" FunctionName="StandardCanModel.Store.sp_department_update" />
+    <FunctionImportMapping FunctionImportName="sp_bookroom_search" FunctionName="StandardCanModel.Store.sp_bookroom_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookroom_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="book_date" ColumnName="book_date" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookroom_emp" FunctionName="StandardCanModel.Store.sp_bookroom_emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookroom_emp_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="checkin_date" ColumnName="checkin_date" />
+          <ScalarProperty Name="checkin_time" ColumnName="checkin_time" />
+          <ScalarProperty Name="checkin_status" ColumnName="checkin_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BOOK_ROOM">
+      <EntityTypeMapping TypeName="StandardCanModel.BOOK_ROOM">
+        <MappingFragment StoreEntitySet="BOOK_ROOM">
+          <ScalarProperty Name="br_appr_remark" ColumnName="br_appr_remark" />
+          <ScalarProperty Name="br_appr2_date" ColumnName="br_appr2_date" />
+          <ScalarProperty Name="br_appr2_remark" ColumnName="br_appr2_remark" />
+          <ScalarProperty Name="br_appr2_by" ColumnName="br_appr2_by" />
+          <ScalarProperty Name="br_appr2_status" ColumnName="br_appr2_status" />
+          <ScalarProperty Name="br_appr1_date" ColumnName="br_appr1_date" />
+          <ScalarProperty Name="br_appr1_remark" ColumnName="br_appr1_remark" />
+          <ScalarProperty Name="br_appr1_by" ColumnName="br_appr1_by" />
+          <ScalarProperty Name="br_appr1_status" ColumnName="br_appr1_status" />
+          <ScalarProperty Name="br_update_date" ColumnName="br_update_date" />
+          <ScalarProperty Name="br_update_by" ColumnName="br_update_by" />
+          <ScalarProperty Name="br_create_date" ColumnName="br_create_date" />
+          <ScalarProperty Name="br_create_by" ColumnName="br_create_by" />
+          <ScalarProperty Name="br_status" ColumnName="br_status" />
+          <ScalarProperty Name="br_remark" ColumnName="br_remark" />
+          <ScalarProperty Name="br_person_total" ColumnName="br_person_total" />
+          <ScalarProperty Name="MRM_ID" ColumnName="MRM_ID" />
+          <ScalarProperty Name="br_stop_time" ColumnName="br_stop_time" />
+          <ScalarProperty Name="br_start_time" ColumnName="br_start_time" />
+          <ScalarProperty Name="br_date" ColumnName="br_date" />
+          <ScalarProperty Name="br_topic" ColumnName="br_topic" />
+          <ScalarProperty Name="BR_ID" ColumnName="BR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAS_ROOM">
+      <EntityTypeMapping TypeName="StandardCanModel.MAS_ROOM">
+        <MappingFragment StoreEntitySet="MAS_ROOM">
+          <ScalarProperty Name="MRM_UPDATE_BY" ColumnName="MRM_UPDATE_BY" />
+          <ScalarProperty Name="MRM_UPDATE_DATE" ColumnName="MRM_UPDATE_DATE" />
+          <ScalarProperty Name="MRM_CREATE_BY" ColumnName="MRM_CREATE_BY" />
+          <ScalarProperty Name="MRM_CREATE_DATE" ColumnName="MRM_CREATE_DATE" />
+          <ScalarProperty Name="MRM_STATUS" ColumnName="MRM_STATUS" />
+          <ScalarProperty Name="MRM_NAME" ColumnName="MRM_NAME" />
+          <ScalarProperty Name="MRM_CODE" ColumnName="MRM_CODE" />
+          <ScalarProperty Name="MRM_ID" ColumnName="MRM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookroom_save" FunctionName="StandardCanModel.Store.sp_bookroom_save" />
+    <FunctionImportMapping FunctionImportName="sp_bookroom_delete_device" FunctionName="StandardCanModel.Store.sp_bookroom_delete_device" />
+    <FunctionImportMapping FunctionImportName="sp_bookroom_insert_device" FunctionName="StandardCanModel.Store.sp_bookroom_insert_device" />
+    <FunctionImportMapping FunctionImportName="sp_bookroom_delete_emp" FunctionName="StandardCanModel.Store.sp_bookroom_delete_emp" />
+    <FunctionImportMapping FunctionImportName="sp_bookroom_insert_emp" FunctionName="StandardCanModel.Store.sp_bookroom_insert_emp" />
+    <FunctionImportMapping FunctionImportName="sp_bookroom_save_status" FunctionName="StandardCanModel.Store.sp_bookroom_save_status" />
+    <FunctionImportMapping FunctionImportName="sp_emp_search_byid" FunctionName="StandardCanModel.Store.sp_emp_search_byid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_search_byid_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_search_by_popup" FunctionName="StandardCanModel.Store.sp_emp_search_by_popup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_search_by_popup_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_car_search_v2" FunctionName="StandardCanModel.Store.sp_car_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_car_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_carreason_search" FunctionName="StandardCanModel.Store.sp_carreason_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_carreason_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_carreason_insert" FunctionName="StandardCanModel.Store.sp_carreason_insert" />
+    <FunctionImportMapping FunctionImportName="sp_carreason_delete" FunctionName="StandardCanModel.Store.sp_carreason_delete" />
+    <FunctionImportMapping FunctionImportName="sp_carreason_update" FunctionName="StandardCanModel.Store.sp_carreason_update" />
+    <FunctionImportMapping FunctionImportName="sp_bookcar_search" FunctionName="StandardCanModel.Store.sp_bookcar_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookcar_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="car_license" ColumnName="car_license" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="req_by" ColumnName="req_by" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="appr_reason" ColumnName="appr_reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookcar_emp" FunctionName="StandardCanModel.Store.sp_bookcar_emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookcar_emp_Result">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="checkin_date" ColumnName="checkin_date" />
+          <ScalarProperty Name="checkin_time" ColumnName="checkin_time" />
+          <ScalarProperty Name="checkin_status" ColumnName="checkin_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BOOK_CAR">
+      <EntityTypeMapping TypeName="StandardCanModel.BOOK_CAR">
+        <MappingFragment StoreEntitySet="BOOK_CAR">
+          <ScalarProperty Name="bc_appr_date" ColumnName="bc_appr_date" />
+          <ScalarProperty Name="bc_appr_by" ColumnName="bc_appr_by" />
+          <ScalarProperty Name="bc_appr_status" ColumnName="bc_appr_status" />
+          <ScalarProperty Name="bc_update_date" ColumnName="bc_update_date" />
+          <ScalarProperty Name="bc_update_by" ColumnName="bc_update_by" />
+          <ScalarProperty Name="bc_create_date" ColumnName="bc_create_date" />
+          <ScalarProperty Name="bc_create_by" ColumnName="bc_create_by" />
+          <ScalarProperty Name="bc_status" ColumnName="bc_status" />
+          <ScalarProperty Name="bc_appr_remark" ColumnName="bc_appr_remark" />
+          <ScalarProperty Name="bc_remark" ColumnName="bc_remark" />
+          <ScalarProperty Name="MDT_ID" ColumnName="MDT_ID" />
+          <ScalarProperty Name="MCR_ID" ColumnName="MCR_ID" />
+          <ScalarProperty Name="MCA_ID" ColumnName="MCA_ID" />
+          <ScalarProperty Name="MCT_ID" ColumnName="MCT_ID" />
+          <ScalarProperty Name="bc_person_total" ColumnName="bc_person_total" />
+          <ScalarProperty Name="bc_stop_time" ColumnName="bc_stop_time" />
+          <ScalarProperty Name="bc_stop_date" ColumnName="bc_stop_date" />
+          <ScalarProperty Name="bc_start_time" ColumnName="bc_start_time" />
+          <ScalarProperty Name="bc_start_date" ColumnName="bc_start_date" />
+          <ScalarProperty Name="bc_topic" ColumnName="bc_topic" />
+          <ScalarProperty Name="BC_ID" ColumnName="BC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookcar_save" FunctionName="StandardCanModel.Store.sp_bookcar_save" />
+    <FunctionImportMapping FunctionImportName="sp_bookcar_delete_emp" FunctionName="StandardCanModel.Store.sp_bookcar_delete_emp" />
+    <FunctionImportMapping FunctionImportName="sp_bookcar_insert_emp" FunctionName="StandardCanModel.Store.sp_bookcar_insert_emp" />
+    <FunctionImportMapping FunctionImportName="sp_bookcar_save_status" FunctionName="StandardCanModel.Store.sp_bookcar_save_status" />
+    <FunctionImportMapping FunctionImportName="sp_note_search" FunctionName="StandardCanModel.Store.sp_note_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_note_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ref_id" ColumnName="ref_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_node_delete" FunctionName="StandardCanModel.Store.sp_node_delete" />
+    <FunctionImportMapping FunctionImportName="sp_node_insert" FunctionName="StandardCanModel.Store.sp_node_insert" />
+    <FunctionImportMapping FunctionImportName="sp_node_update" FunctionName="StandardCanModel.Store.sp_node_update" />
+    <FunctionImportMapping FunctionImportName="sp_timeatt_realtime_search" FunctionName="StandardCanModel.Store.sp_timeatt_realtime_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_timeatt_realtime_search_Result">
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="depart_name" ColumnName="depart_name" />
+          <ScalarProperty Name="node_name" ColumnName="node_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_regular_search" FunctionName="StandardCanModel.Store.sp_emp_regular_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_regular_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_regular_delete" FunctionName="StandardCanModel.Store.sp_emp_regular_delete" />
+    <FunctionImportMapping FunctionImportName="sp_emp_regular_insert" FunctionName="StandardCanModel.Store.sp_emp_regular_insert" />
+    <FunctionImportMapping FunctionImportName="sp_emp_temporary_search" FunctionName="StandardCanModel.Store.sp_emp_temporary_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_temporary_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_temporary_delete" FunctionName="StandardCanModel.Store.sp_emp_temporary_delete" />
+    <FunctionImportMapping FunctionImportName="sp_emp_temporary_save" FunctionName="StandardCanModel.Store.sp_emp_temporary_save" />
+    <FunctionImportMapping FunctionImportName="sp_report_setting_search" FunctionName="StandardCanModel.Store.sp_report_setting_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_report_setting_search_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="config1" ColumnName="config1" />
+          <ScalarProperty Name="config2" ColumnName="config2" />
+          <ScalarProperty Name="config3" ColumnName="config3" />
+          <ScalarProperty Name="config4" ColumnName="config4" />
+          <ScalarProperty Name="config5" ColumnName="config5" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_report_setting_update" FunctionName="StandardCanModel.Store.sp_report_setting_update" />
+    <FunctionImportMapping FunctionImportName="sp_project_search_v2" FunctionName="StandardCanModel.Store.sp_project_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_search_v2_Result">
+          <ScalarProperty Name="prj_id" ColumnName="prj_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="prj_name" ColumnName="prj_name" />
+          <ScalarProperty Name="star_tdate" ColumnName="star_tdate" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_insert_v2" FunctionName="StandardCanModel.Store.sp_project_insert_v2" />
+    <FunctionImportMapping FunctionImportName="sp_project_insert_v3" FunctionName="StandardCanModel.Store.sp_project_insert_v3" />
+    <FunctionImportMapping FunctionImportName="sp_project_update_v2" FunctionName="StandardCanModel.Store.sp_project_update_v2" />
+    <FunctionImportMapping FunctionImportName="sp_formular_insert" FunctionName="StandardCanModel.Store.sp_formular_insert" />
+    <FunctionImportMapping FunctionImportName="sp_formular_search" FunctionName="StandardCanModel.Store.sp_formular_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_formular_search_Result">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_formular_update" FunctionName="StandardCanModel.Store.sp_formular_update" />
+    <FunctionImportMapping FunctionImportName="sp_formularrange_delete" FunctionName="StandardCanModel.Store.sp_formularrange_delete" />
+    <FunctionImportMapping FunctionImportName="sp_formularrange_insert" FunctionName="StandardCanModel.Store.sp_formularrange_insert" />
+    <FunctionImportMapping FunctionImportName="sp_formularvalue_delete" FunctionName="StandardCanModel.Store.sp_formularvalue_delete" />
+    <FunctionImportMapping FunctionImportName="sp_formularvalue_insert" FunctionName="StandardCanModel.Store.sp_formularvalue_insert" />
+    <FunctionImportMapping FunctionImportName="sp_formular_search_v2" FunctionName="StandardCanModel.Store.sp_formular_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_formular_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="MAS_FORMULA">
+      <EntityTypeMapping TypeName="StandardCanModel.MAS_FORMULA">
+        <MappingFragment StoreEntitySet="MAS_FORMULA">
+          <ScalarProperty Name="MFL_UPDATE_BY" ColumnName="MFL_UPDATE_BY" />
+          <ScalarProperty Name="MFL_UPDATE_DATE" ColumnName="MFL_UPDATE_DATE" />
+          <ScalarProperty Name="MFL_CREATE_BY" ColumnName="MFL_CREATE_BY" />
+          <ScalarProperty Name="MFL_CREATE_DATE" ColumnName="MFL_CREATE_DATE" />
+          <ScalarProperty Name="MFL_STATUS" ColumnName="MFL_STATUS" />
+          <ScalarProperty Name="MFL_INPUT_TYPE" ColumnName="MFL_INPUT_TYPE" />
+          <ScalarProperty Name="MFL_NAME" ColumnName="MFL_NAME" />
+          <ScalarProperty Name="MFL_TYPE" ColumnName="MFL_TYPE" />
+          <ScalarProperty Name="MFL_ID" ColumnName="MFL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_formularrange_search" FunctionName="StandardCanModel.Store.sp_formularrange_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_formularrange_search_Result">
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="display" ColumnName="display" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_formulavalue_search" FunctionName="StandardCanModel.Store.sp_formulavalue_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_formulavalue_search_Result">
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_formular_save" FunctionName="StandardCanModel.Store.sp_formular_save" />
+    <FunctionImportMapping FunctionImportName="sp_department_search_v2" FunctionName="StandardCanModel.Store.sp_department_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_department_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="dis_status" ColumnName="dis_status" />
+          <ScalarProperty Name="dis_status_dis" ColumnName="dis_status_dis" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_course_search" FunctionName="StandardCanModel.Store.sp_project_course_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_course_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_type" ColumnName="course_type" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_course_search_v2" FunctionName="StandardCanModel.Store.sp_project_course_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_course_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_type" ColumnName="course_type" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_course_detail" FunctionName="StandardCanModel.Store.sp_project_course_detail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_course_detail_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="formula_id" ColumnName="formula_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="expert_id" ColumnName="expert_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="score1" ColumnName="score1" />
+          <ScalarProperty Name="score11" ColumnName="score11" />
+          <ScalarProperty Name="score12" ColumnName="score12" />
+          <ScalarProperty Name="score13" ColumnName="score13" />
+          <ScalarProperty Name="score14" ColumnName="score14" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_course_detail_v2" FunctionName="StandardCanModel.Store.sp_project_course_detail_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_course_detail_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="formula_id" ColumnName="formula_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="expert_id" ColumnName="expert_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="score1" ColumnName="score1" />
+          <ScalarProperty Name="score2" ColumnName="score2" />
+          <ScalarProperty Name="score3" ColumnName="score3" />
+          <ScalarProperty Name="score4" ColumnName="score4" />
+          <ScalarProperty Name="score5" ColumnName="score5" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_course_detail_v3" FunctionName="StandardCanModel.Store.sp_project_course_detail_v3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_course_detail_v3_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="formula_id" ColumnName="formula_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="expert_id" ColumnName="expert_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_url" ColumnName="file_url" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="score1" ColumnName="score1" />
+          <ScalarProperty Name="score2" ColumnName="score2" />
+          <ScalarProperty Name="score3" ColumnName="score3" />
+          <ScalarProperty Name="score4" ColumnName="score4" />
+          <ScalarProperty Name="score5" ColumnName="score5" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_course_save" FunctionName="StandardCanModel.Store.sp_project_course_save" />
+    <FunctionImportMapping FunctionImportName="sp_project_course_save_v2" FunctionName="StandardCanModel.Store.sp_project_course_save_v2" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_search" FunctionName="StandardCanModel.Store.sp_schedule_course_search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_search_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="total_course" ColumnName="total_course" />
+          <ScalarProperty Name="total_emp" ColumnName="total_emp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_detail" FunctionName="StandardCanModel.Store.sp_schedule_course_detail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_detail_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_type" ColumnName="course_type" />
+          <ScalarProperty Name="MEP_NAME" ColumnName="MEP_NAME" />
+          <ScalarProperty Name="cost_total" ColumnName="cost_total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_search_v2" FunctionName="StandardCanModel.Store.sp_schedule_course_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="total_course" ColumnName="total_course" />
+          <ScalarProperty Name="total_emp" ColumnName="total_emp" />
+          <ScalarProperty Name="total_course1" ColumnName="total_course1" />
+          <ScalarProperty Name="total_emp1" ColumnName="total_emp1" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_emp" FunctionName="StandardCanModel.Store.sp_schedule_course_emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_emp_Result">
+          <ScalarProperty Name="ref_id" ColumnName="ref_id" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+          <ScalarProperty Name="score_part_1" ColumnName="score_part_1" />
+          <ScalarProperty Name="score_part_2" ColumnName="score_part_2" />
+          <ScalarProperty Name="score_part_3" ColumnName="score_part_3" />
+          <ScalarProperty Name="score_part_4" ColumnName="score_part_4" />
+          <ScalarProperty Name="score_part_5" ColumnName="score_part_5" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_cost" FunctionName="StandardCanModel.Store.sp_schedule_course_cost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_cost_Result">
+          <ScalarProperty Name="ref_id" ColumnName="ref_id" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_cost_v2" FunctionName="StandardCanModel.Store.sp_schedule_course_cost_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_cost_v2_Result">
+          <ScalarProperty Name="ref_id" ColumnName="ref_id" />
+          <ScalarProperty Name="cost_id" ColumnName="cost_id" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_save" FunctionName="StandardCanModel.Store.sp_schedule_course_save" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_detail_v2" FunctionName="StandardCanModel.Store.sp_schedule_course_detail_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_detail_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_type" ColumnName="course_type" />
+          <ScalarProperty Name="MEP_NAME" ColumnName="MEP_NAME" />
+          <ScalarProperty Name="cost_total" ColumnName="cost_total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_detail_save" FunctionName="StandardCanModel.Store.sp_schedule_course_detail_save" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_emp_delete" FunctionName="StandardCanModel.Store.sp_schedule_course_emp_delete" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_emp_save" FunctionName="StandardCanModel.Store.sp_schedule_course_emp_save" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_emp_v2" FunctionName="StandardCanModel.Store.sp_schedule_course_emp_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_schedule_course_emp_v2_Result">
+          <ScalarProperty Name="ref_id" ColumnName="ref_id" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+          <ScalarProperty Name="score_part_1" ColumnName="score_part_1" />
+          <ScalarProperty Name="score_part_2" ColumnName="score_part_2" />
+          <ScalarProperty Name="score_part_3" ColumnName="score_part_3" />
+          <ScalarProperty Name="score_part_4" ColumnName="score_part_4" />
+          <ScalarProperty Name="score_part_5" ColumnName="score_part_5" />
+          <ScalarProperty Name="score_total" ColumnName="score_total" />
+          <ScalarProperty Name="score_result" ColumnName="score_result" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_cost_delete" FunctionName="StandardCanModel.Store.sp_schedule_course_cost_delete" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_cost_save" FunctionName="StandardCanModel.Store.sp_schedule_course_cost_save" />
+    <FunctionImportMapping FunctionImportName="sp_schedule_course_detail_delete" FunctionName="StandardCanModel.Store.sp_schedule_course_detail_delete" />
+    <FunctionImportMapping FunctionImportName="sp_emp_regular_search_v2" FunctionName="StandardCanModel.Store.sp_emp_regular_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_regular_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="interface_log">
+      <EntityTypeMapping TypeName="StandardCanModel.interface_log">
+        <MappingFragment StoreEntitySet="interface_log">
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="data_log" ColumnName="data_log" />
+          <ScalarProperty Name="module" ColumnName="module" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_temporary_search_v2" FunctionName="StandardCanModel.Store.sp_emp_temporary_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_temporary_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="depart" ColumnName="depart" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_tel" ColumnName="emp_tel" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_car_search_v3" FunctionName="StandardCanModel.Store.sp_car_search_v3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_car_search_v3_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="car_type_id" ColumnName="car_type_id" />
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_emp_profile_tab1_v2" FunctionName="StandardCanModel.Store.sp_emp_profile_tab1_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_emp_profile_tab1_v2_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+          <ScalarProperty Name="md_name" ColumnName="md_name" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="start_work" ColumnName="start_work" />
+          <ScalarProperty Name="age_work" ColumnName="age_work" />
+          <ScalarProperty Name="book_permit" ColumnName="book_permit" />
+          <ScalarProperty Name="book_permit_expire" ColumnName="book_permit_expire" />
+          <ScalarProperty Name="boss_name" ColumnName="boss_name" />
+          <ScalarProperty Name="boss_tel" ColumnName="boss_tel" />
+          <ScalarProperty Name="sc_credit" ColumnName="sc_credit" />
+          <ScalarProperty Name="level_work" ColumnName="level_work" />
+          <ScalarProperty Name="social_security" ColumnName="social_security" />
+          <ScalarProperty Name="fund" ColumnName="fund" />
+          <ScalarProperty Name="cooperative" ColumnName="cooperative" />
+          <ScalarProperty Name="card_id" ColumnName="card_id" />
+          <ScalarProperty Name="card_id_expire" ColumnName="card_id_expire" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="religion" ColumnName="religion" />
+          <ScalarProperty Name="salary_account" ColumnName="salary_account" />
+          <ScalarProperty Name="blood_type" ColumnName="blood_type" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lineid" ColumnName="lineid" />
+          <ScalarProperty Name="current_address" ColumnName="current_address" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="emp_status" ColumnName="emp_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_project_detail" FunctionName="StandardCanModel.Store.sp_project_detail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_project_detail_Result">
+          <ScalarProperty Name="prj_id" ColumnName="prj_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="prj_name" ColumnName="prj_name" />
+          <ScalarProperty Name="star_tdate" ColumnName="star_tdate" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="prj_detail" ColumnName="prj_detail" />
+          <ScalarProperty Name="prj_status" ColumnName="prj_status" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookcar_search_v2" FunctionName="StandardCanModel.Store.sp_bookcar_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookcar_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="car_license" ColumnName="car_license" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="req_by" ColumnName="req_by" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="sts_color" ColumnName="sts_color" />
+          <ScalarProperty Name="appr_reason" ColumnName="appr_reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookroom_search_v2" FunctionName="StandardCanModel.Store.sp_bookroom_search_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookroom_search_v2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="book_date" ColumnName="book_date" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="sts_color" ColumnName="sts_color" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookroom_search_v3" FunctionName="StandardCanModel.Store.sp_bookroom_search_v3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookroom_search_v3_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="book_date" ColumnName="book_date" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="sts_color" ColumnName="sts_color" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookcar_search_v3" FunctionName="StandardCanModel.Store.sp_bookcar_search_v3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookcar_search_v3_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+          <ScalarProperty Name="use_car_reason" ColumnName="use_car_reason" />
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="car_license" ColumnName="car_license" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="req_by" ColumnName="req_by" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="sts_color" ColumnName="sts_color" />
+          <ScalarProperty Name="appr_reason" ColumnName="appr_reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

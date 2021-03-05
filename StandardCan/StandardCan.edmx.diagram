@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ffe96a093cc411b8ef7ecb0876554ef" Name="Diagram1" >
+        <EntityTypeShape EntityType="StandardCanModel.MAS_FORMULA" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StandardCanModel.interface_log" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StandardCanModel.EMP_PROFILE" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="StandardCanModel.NEWS" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_BENEFITS" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_HARDWARE" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="StandardCanModel.TRAINING_EMP" Width="1.5" PointX="13.875" PointY="18.875" />
+        <EntityTypeShape EntityType="StandardCanModel.TRAINING_EXPERT" Width="1.5" PointX="16.875" PointY="23" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_COURSE" Width="1.5" PointX="9.375" PointY="21.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_DESTINATION" Width="1.5" PointX="9.375" PointY="27.125" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_EXPENSE" Width="1.5" PointX="11.375" PointY="1" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_EXPERT" Width="1.5" PointX="9.375" PointY="10" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_PROJECT" Width="1.5" PointX="3.375" PointY="11.75" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EXPERT_MAS_EXPERT" />
+        <EntityTypeShape EntityType="StandardCanModel.TRAINING_EXPENSE" Width="1.5" PointX="13.875" PointY="12.75" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EXPENSE_MAS_EXPENSE" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_DEPARTMENT" Width="1.5" PointX="11.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StandardCanModel.TRAINING_ITEM" Width="1.5" PointX="11.625" PointY="24" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_ITEM_MAS_COURSE" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_ITEM_MAS_DESTINATION" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EMP_TRAINING_ITEM" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EXPENSE_TRAINING_ITEM" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EXPERT_TRAINING_ITEM" />
+        <EntityTypeShape EntityType="StandardCanModel.TRAINING" Width="1.5" PointX="11.625" PointY="17.375" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EMP_TRAINING" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EXPENSE_TRAINING" />
+        <AssociationConnector Association="StandardCanModel.FK_TRAINING_EXPERT_TRAINING" />
+        <EntityTypeShape EntityType="StandardCanModel.CNF_ROOM" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="StandardCanModel.CNF_ROOM_STATUS" Width="1.5" PointX="11.375" PointY="8.75" />
+        <EntityTypeShape EntityType="StandardCanModel.IMAGE_SLIDE" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_CAR" Width="1.5" PointX="13.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_GLOBAL_CONFIG" Width="1.5" PointX="7.375" PointY="13.75" />
+        <EntityTypeShape EntityType="StandardCanModel.TIME_ATT_IMAGE" Width="1.5" PointX="13.375" PointY="8.75" />
+        <EntityTypeShape EntityType="StandardCanModel.TIME_ATT_REALTIME" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_APPROVE_STATUS" Width="1.5" PointX="9.375" PointY="13.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_CAR_REASON" Width="1.5" PointX="3.375" PointY="15.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_ROOM" Width="1.5" PointX="15.375" PointY="5.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_CAR_TYPE" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="StandardCanModel.BOOK_ROOM" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="StandardCanModel.BOOK_CAR" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="StandardCanModel.IMPORT_DATA" Width="1.5" PointX="7.375" PointY="16.75" />
+        <EntityTypeShape EntityType="StandardCanModel.IMPORT_SCORE" Width="1.5" PointX="16.375" PointY="9.75" />
+        <EntityTypeShape EntityType="StandardCanModel.MAS_PROGRAM" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StandardCanModel.USER_GROUP" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StandardCanModel.USER_ROLE" Width="1.5" PointX="16.375" PointY="14.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

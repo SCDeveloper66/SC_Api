@@ -1,0 +1,1448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StandardCanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="StandardCanEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_hardware_search" ReturnType="Collection(StandardCanModel.sp_hardware_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hardware_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hardware_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hardware_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expert_search" ReturnType="Collection(StandardCanModel.sp_expert_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expert_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expert_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_tel" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expert_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_tel" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expense_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expense_insert">
+      <Parameter Name="v_code" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expense_search" ReturnType="Collection(StandardCanModel.sp_expense_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_expense_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_code" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_destination_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_destination_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_destination_search" ReturnType="Collection(StandardCanModel.sp_destination_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_destination_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_room_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_room_insert">
+      <Parameter Name="v_code" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_room_search" ReturnType="Collection(StandardCanModel.sp_room_search_Result)">
+      <Parameter Name="v_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_room_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_code" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_cartype_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_cartype_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_desc" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_cartype_search" ReturnType="Collection(StandardCanModel.sp_cartype_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_cartype_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_desc" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_car_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_car_insert">
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_desc" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_car_search" ReturnType="Collection(StandardCanModel.sp_car_search_Result)">
+      <Parameter Name="car_type_from" Mode="In" Type="String" />
+      <Parameter Name="car_type_to" Mode="In" Type="String" />
+      <Parameter Name="car_from" Mode="In" Type="String" />
+      <Parameter Name="car_to" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_car_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_desc" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_cancelRoom_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_auto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_configmeeting_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_configmeeting_insert">
+      <Parameter Name="v_time" Mode="In" Type="String" />
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+      <Parameter Name="v_score" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_configmeeting_search" ReturnType="Collection(StandardCanModel.sp_configmeeting_search_Result)">
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_configmeeting_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_time" Mode="In" Type="String" />
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+      <Parameter Name="v_score" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_holiday_search" ReturnType="Collection(StandardCanModel.sp_holiday_search_Result)">
+      <Parameter Name="v_year" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_traindestination_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_traindestination_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_traindestination_search" ReturnType="Collection(StandardCanModel.sp_traindestination_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_traindestination_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sh_search" ReturnType="Collection(StandardCanModel.sp_sh_search_Result)" />
+    <FunctionImport Name="sp_depart_search" ReturnType="Collection(StandardCanModel.sp_depart_search_Result)" />
+    <FunctionImport Name="sp_emp_profile_search" ReturnType="Collection(StandardCanModel.sp_emp_profile_search_Result)">
+      <Parameter Name="v_empcode_start" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_stop" Mode="In" Type="String" />
+      <Parameter Name="v_sh_start" Mode="In" Type="String" />
+      <Parameter Name="v_sh_stop" Mode="In" Type="String" />
+      <Parameter Name="v_depart_start" Mode="In" Type="String" />
+      <Parameter Name="v_depart_stop" Mode="In" Type="String" />
+      <Parameter Name="v_status_start" Mode="In" Type="String" />
+      <Parameter Name="v_status_stop" Mode="In" Type="String" />
+      <Parameter Name="v_emp_fname" Mode="In" Type="String" />
+      <Parameter Name="v_emp_lname" Mode="In" Type="String" />
+      <Parameter Name="v_head_fname" Mode="In" Type="String" />
+      <Parameter Name="v_head_lname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tab1" ReturnType="Collection(StandardCanModel.sp_emp_profile_tab1_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tab2" ReturnType="Collection(StandardCanModel.sp_emp_profile_tab2_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_start_date" Mode="In" Type="String" />
+      <Parameter Name="v_stop_date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tab3" ReturnType="Collection(StandardCanModel.sp_emp_profile_tab3_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_start_date" Mode="In" Type="String" />
+      <Parameter Name="v_stop_date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tab3_quota" ReturnType="Collection(StandardCanModel.sp_emp_profile_tab3_quota_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabnote_search" ReturnType="Collection(String)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabnote_update">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_note" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabcard_search" ReturnType="Collection(StandardCanModel.sp_emp_profile_tabcard_search_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabcard_update">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_date" Mode="In" Type="String" />
+      <Parameter Name="v_cardno" Mode="In" Type="String" />
+      <Parameter Name="v_status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabwork_search" ReturnType="Collection(StandardCanModel.sp_emp_profile_tabwork_search_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabwork_delete">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabwork_update">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_date" Mode="In" Type="String" />
+      <Parameter Name="v_no" Mode="In" Type="String" />
+      <Parameter Name="v_grade" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabbehavior_search" ReturnType="Collection(StandardCanModel.sp_emp_profile_tabbehavior_search_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabbehavior_search_v2" ReturnType="Collection(StandardCanModel.sp_emp_profile_tabbehavior_search_v2_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabbehavior_delete">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tabbehavior_update">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_date" Mode="In" Type="String" />
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+      <Parameter Name="v_score" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_department_search" ReturnType="Collection(StandardCanModel.sp_department_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_department_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_tel" Mode="In" Type="String" />
+      <Parameter Name="v_status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_search" ReturnType="Collection(StandardCanModel.sp_bookroom_search_Result)">
+      <Parameter Name="v_room_from" Mode="In" Type="String" />
+      <Parameter Name="v_room_to" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_status_from" Mode="In" Type="String" />
+      <Parameter Name="v_status_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_emp" ReturnType="Collection(StandardCanModel.sp_bookroom_emp_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="BOOK_ROOM" EntityType="StandardCanModel.BOOK_ROOM" />
+    <EntitySet Name="MAS_ROOM" EntityType="StandardCanModel.MAS_ROOM" />
+    <FunctionImport Name="sp_bookroom_save">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_topic" Mode="In" Type="String" />
+      <Parameter Name="v_date" Mode="In" Type="String" />
+      <Parameter Name="v_start_time" Mode="In" Type="String" />
+      <Parameter Name="v_stop_time" Mode="In" Type="String" />
+      <Parameter Name="v_room_id" Mode="In" Type="String" />
+      <Parameter Name="v_person_total" Mode="In" Type="String" />
+      <Parameter Name="v_remark" Mode="In" Type="String" />
+      <Parameter Name="v_save_type" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_delete_device">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_insert_device">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_device_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_delete_emp">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_insert_emp">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_save_status">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_remark" Mode="In" Type="String" />
+      <Parameter Name="v_user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_search_byid" ReturnType="Collection(StandardCanModel.sp_emp_search_byid_Result)">
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_search_by_popup" ReturnType="Collection(StandardCanModel.sp_emp_search_by_popup_Result)">
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+      <Parameter Name="v_emp_name" Mode="In" Type="String" />
+      <Parameter Name="v_sh_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_car_search_v2" ReturnType="Collection(StandardCanModel.sp_car_search_v2_Result)">
+      <Parameter Name="car_type_from" Mode="In" Type="String" />
+      <Parameter Name="car_type_to" Mode="In" Type="String" />
+      <Parameter Name="car_from" Mode="In" Type="String" />
+      <Parameter Name="car_to" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_carreason_search" ReturnType="Collection(StandardCanModel.sp_carreason_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_carreason_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_desc" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_carreason_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_carreason_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_desc" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_search" ReturnType="Collection(StandardCanModel.sp_bookcar_search_Result)">
+      <Parameter Name="v_cartype_from" Mode="In" Type="String" />
+      <Parameter Name="v_cartype_to" Mode="In" Type="String" />
+      <Parameter Name="v_carlicense_from" Mode="In" Type="String" />
+      <Parameter Name="v_carlicense_to" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_carreason_from" Mode="In" Type="String" />
+      <Parameter Name="v_carreason_to" Mode="In" Type="String" />
+      <Parameter Name="v_status_from" Mode="In" Type="String" />
+      <Parameter Name="v_status_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_emp" ReturnType="Collection(StandardCanModel.sp_bookcar_emp_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="BOOK_CAR" EntityType="StandardCanModel.BOOK_CAR" />
+    <FunctionImport Name="sp_bookcar_save">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_topic" Mode="In" Type="String" />
+      <Parameter Name="v_start_date" Mode="In" Type="String" />
+      <Parameter Name="v_start_time" Mode="In" Type="String" />
+      <Parameter Name="v_stop_date" Mode="In" Type="String" />
+      <Parameter Name="v_stop_time" Mode="In" Type="String" />
+      <Parameter Name="v_person_total" Mode="In" Type="String" />
+      <Parameter Name="v_cartype_id" Mode="In" Type="String" />
+      <Parameter Name="v_car_id" Mode="In" Type="String" />
+      <Parameter Name="v_reason_id" Mode="In" Type="String" />
+      <Parameter Name="v_dest_id" Mode="In" Type="String" />
+      <Parameter Name="v_remark" Mode="In" Type="String" />
+      <Parameter Name="v_save_type" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_delete_emp">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_insert_emp">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_save_status">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_remark" Mode="In" Type="String" />
+      <Parameter Name="v_user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_note_search" ReturnType="Collection(StandardCanModel.sp_note_search_Result)">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_node_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_node_insert">
+      <Parameter Name="v_ip" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_refid" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_node_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_ip" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_refid" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timeatt_realtime_search" ReturnType="Collection(StandardCanModel.sp_timeatt_realtime_search_Result)">
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_from" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_to" Mode="In" Type="String" />
+      <Parameter Name="v_depart_from" Mode="In" Type="String" />
+      <Parameter Name="v_depart_to" Mode="In" Type="String" />
+      <Parameter Name="v_fname" Mode="In" Type="String" />
+      <Parameter Name="v_lname" Mode="In" Type="String" />
+      <Parameter Name="v_node_from" Mode="In" Type="String" />
+      <Parameter Name="v_node_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_regular_search" ReturnType="Collection(StandardCanModel.sp_emp_regular_search_Result)">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_regular_delete">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_regular_insert">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_temporary_search" ReturnType="Collection(StandardCanModel.sp_emp_temporary_search_Result)">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_from" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_to" Mode="In" Type="String" />
+      <Parameter Name="v_depart_from" Mode="In" Type="String" />
+      <Parameter Name="v_depart_to" Mode="In" Type="String" />
+      <Parameter Name="v_fname" Mode="In" Type="String" />
+      <Parameter Name="v_lname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_temporary_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_temporary_save">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+      <Parameter Name="v_start_date" Mode="In" Type="String" />
+      <Parameter Name="v_stop_date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_report_setting_search" ReturnType="Collection(StandardCanModel.sp_report_setting_search_Result)">
+      <Parameter Name="v_report" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_report_setting_update">
+      <Parameter Name="v_report" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_search_v2" ReturnType="Collection(StandardCanModel.sp_project_search_v2_Result)">
+      <Parameter Name="year_from" Mode="In" Type="String" />
+      <Parameter Name="year_to" Mode="In" Type="String" />
+      <Parameter Name="proj_from" Mode="In" Type="String" />
+      <Parameter Name="proj_to" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_insert_v2">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="start_date" Mode="In" Type="String" />
+      <Parameter Name="stop_date" Mode="In" Type="String" />
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_insert_v3">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="start_date" Mode="In" Type="String" />
+      <Parameter Name="stop_date" Mode="In" Type="String" />
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+      <Parameter Name="v_status" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_update_v2">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="start_date" Mode="In" Type="String" />
+      <Parameter Name="stop_date" Mode="In" Type="String" />
+      <Parameter Name="v_detail" Mode="In" Type="String" />
+      <Parameter Name="v_status" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formular_insert">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="input_type" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formular_search" ReturnType="Collection(StandardCanModel.sp_formular_search_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formular_update">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="v_inputtype" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formularrange_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_range" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formularrange_insert">
+      <Parameter Name="formular_id" Mode="In" Type="String" />
+      <Parameter Name="formular_no" Mode="In" Type="String" />
+      <Parameter Name="range_score" Mode="In" Type="String" />
+      <Parameter Name="display" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formularvalue_delete">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formularvalue_insert">
+      <Parameter Name="formular_id" Mode="In" Type="String" />
+      <Parameter Name="v_orderby" Mode="In" Type="String" />
+      <Parameter Name="v_value" Mode="In" Type="String" />
+      <Parameter Name="v_text" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formular_search_v2" ReturnType="Collection(StandardCanModel.sp_formular_search_v2_Result)">
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="MAS_FORMULA" EntityType="StandardCanModel.MAS_FORMULA" />
+    <FunctionImport Name="sp_formularrange_search" ReturnType="Collection(StandardCanModel.sp_formularrange_search_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formulavalue_search" ReturnType="Collection(StandardCanModel.sp_formulavalue_search_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_formular_save">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_type" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+      <Parameter Name="input_type" Mode="In" Type="String" />
+      <Parameter Name="v_usrid" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_department_search_v2" ReturnType="Collection(StandardCanModel.sp_department_search_v2_Result)">
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_search" ReturnType="Collection(StandardCanModel.sp_project_course_search_Result)">
+      <Parameter Name="year_from" Mode="In" Type="String" />
+      <Parameter Name="year_to" Mode="In" Type="String" />
+      <Parameter Name="proj_from" Mode="In" Type="String" />
+      <Parameter Name="proj_to" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_search_v2" ReturnType="Collection(StandardCanModel.sp_project_course_search_v2_Result)">
+      <Parameter Name="year_from" Mode="In" Type="String" />
+      <Parameter Name="year_to" Mode="In" Type="String" />
+      <Parameter Name="proj_from" Mode="In" Type="String" />
+      <Parameter Name="proj_to" Mode="In" Type="String" />
+      <Parameter Name="v_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_detail" ReturnType="Collection(StandardCanModel.sp_project_course_detail_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_detail_v2" ReturnType="Collection(StandardCanModel.sp_project_course_detail_v2_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_detail_v3" ReturnType="Collection(StandardCanModel.sp_project_course_detail_v3_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_save">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_project_id" Mode="In" Type="String" />
+      <Parameter Name="v_course_id" Mode="In" Type="String" />
+      <Parameter Name="v_course_name" Mode="In" Type="String" />
+      <Parameter Name="v_formula_id" Mode="In" Type="String" />
+      <Parameter Name="v_location_id" Mode="In" Type="String" />
+      <Parameter Name="v_expert_id" Mode="In" Type="String" />
+      <Parameter Name="v_file_name" Mode="In" Type="String" />
+      <Parameter Name="v_file_base64" Mode="In" Type="String" />
+      <Parameter Name="v_remark" Mode="In" Type="String" />
+      <Parameter Name="v_score1" Mode="In" Type="String" />
+      <Parameter Name="v_score2" Mode="In" Type="String" />
+      <Parameter Name="v_score3" Mode="In" Type="String" />
+      <Parameter Name="v_score4" Mode="In" Type="String" />
+      <Parameter Name="v_score5" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_course_save_v2">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="v_project_id" Mode="In" Type="String" />
+      <Parameter Name="v_course_id" Mode="In" Type="String" />
+      <Parameter Name="v_course_name" Mode="In" Type="String" />
+      <Parameter Name="v_formula_id" Mode="In" Type="String" />
+      <Parameter Name="v_location_id" Mode="In" Type="String" />
+      <Parameter Name="v_expert_id" Mode="In" Type="String" />
+      <Parameter Name="v_file_name" Mode="In" Type="String" />
+      <Parameter Name="v_file_base64" Mode="In" Type="String" />
+      <Parameter Name="v_remark" Mode="In" Type="String" />
+      <Parameter Name="v_score1" Mode="In" Type="String" />
+      <Parameter Name="v_score2" Mode="In" Type="String" />
+      <Parameter Name="v_score3" Mode="In" Type="String" />
+      <Parameter Name="v_score4" Mode="In" Type="String" />
+      <Parameter Name="v_score5" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_search" ReturnType="Collection(StandardCanModel.sp_schedule_course_search_Result)">
+      <Parameter Name="year_from" Mode="In" Type="String" />
+      <Parameter Name="year_to" Mode="In" Type="String" />
+      <Parameter Name="proj_from" Mode="In" Type="String" />
+      <Parameter Name="proj_to" Mode="In" Type="String" />
+      <Parameter Name="v_course_name" Mode="In" Type="String" />
+      <Parameter Name="start_date" Mode="In" Type="String" />
+      <Parameter Name="stop_date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_detail" ReturnType="Collection(StandardCanModel.sp_schedule_course_detail_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_search_v2" ReturnType="Collection(StandardCanModel.sp_schedule_course_search_v2_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+      <Parameter Name="year_from" Mode="In" Type="String" />
+      <Parameter Name="year_to" Mode="In" Type="String" />
+      <Parameter Name="proj_from" Mode="In" Type="String" />
+      <Parameter Name="proj_to" Mode="In" Type="String" />
+      <Parameter Name="v_course_name" Mode="In" Type="String" />
+      <Parameter Name="start_date" Mode="In" Type="String" />
+      <Parameter Name="stop_date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_emp" ReturnType="Collection(StandardCanModel.sp_schedule_course_emp_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_cost" ReturnType="Collection(StandardCanModel.sp_schedule_course_cost_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_cost_v2" ReturnType="Collection(StandardCanModel.sp_schedule_course_cost_v2_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_save">
+      <Parameter Name="v_sc_id" Mode="In" Type="String" />
+      <Parameter Name="v_sc_name" Mode="In" Type="String" />
+      <Parameter Name="v_sc_start_date" Mode="In" Type="String" />
+      <Parameter Name="v_sc_stop_date" Mode="In" Type="String" />
+      <Parameter Name="v_sc_total_course" Mode="In" Type="String" />
+      <Parameter Name="v_sc_total_emp" Mode="In" Type="String" />
+      <Parameter Name="v_sc_status" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_detail_v2" ReturnType="Collection(StandardCanModel.sp_schedule_course_detail_v2_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_detail_save">
+      <Parameter Name="v_sc_id" Mode="In" Type="String" />
+      <Parameter Name="v_scd_id" Mode="In" Type="String" />
+      <Parameter Name="v_cource_id" Mode="In" Type="String" />
+      <Parameter Name="v_scd_date" Mode="In" Type="String" />
+      <Parameter Name="v_scd_start_time" Mode="In" Type="String" />
+      <Parameter Name="v_scd_stop_time" Mode="In" Type="String" />
+      <Parameter Name="v_scd_total_course" Mode="In" Type="String" />
+      <Parameter Name="v_scd_total_emp" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+      <Parameter Name="v_token_update" Mode="In" Type="String" />
+      <Parameter Name="r_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_emp_delete">
+      <Parameter Name="v_scd_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_emp_save">
+      <Parameter Name="v_scd_id" Mode="In" Type="String" />
+      <Parameter Name="v_emp_code" Mode="In" Type="String" />
+      <Parameter Name="v_score_part_1" Mode="In" Type="String" />
+      <Parameter Name="v_score_part_2" Mode="In" Type="String" />
+      <Parameter Name="v_score_part_3" Mode="In" Type="String" />
+      <Parameter Name="v_score_part_4" Mode="In" Type="String" />
+      <Parameter Name="v_score_part_5" Mode="In" Type="String" />
+      <Parameter Name="v_score_total" Mode="In" Type="String" />
+      <Parameter Name="v_score_result" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_emp_v2" ReturnType="Collection(StandardCanModel.sp_schedule_course_emp_v2_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_cost_delete">
+      <Parameter Name="v_scd_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_cost_save">
+      <Parameter Name="v_sc_id" Mode="In" Type="String" />
+      <Parameter Name="v_scd_id" Mode="In" Type="String" />
+      <Parameter Name="v_exp_id" Mode="In" Type="String" />
+      <Parameter Name="v_cost" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_schedule_course_detail_delete">
+      <Parameter Name="v_scd_id" Mode="In" Type="String" />
+      <Parameter Name="v_token_update" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_regular_search_v2" ReturnType="Collection(StandardCanModel.sp_emp_regular_search_v2_Result)">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="interface_log" EntityType="StandardCanModel.interface_log" />
+    <FunctionImport Name="sp_emp_temporary_search_v2" ReturnType="Collection(StandardCanModel.sp_emp_temporary_search_v2_Result)">
+      <Parameter Name="v_userid" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_from" Mode="In" Type="String" />
+      <Parameter Name="v_empcode_to" Mode="In" Type="String" />
+      <Parameter Name="v_depart_from" Mode="In" Type="String" />
+      <Parameter Name="v_depart_to" Mode="In" Type="String" />
+      <Parameter Name="v_fname" Mode="In" Type="String" />
+      <Parameter Name="v_lname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_car_search_v3" ReturnType="Collection(StandardCanModel.sp_car_search_v3_Result)">
+      <Parameter Name="car_type_from" Mode="In" Type="String" />
+      <Parameter Name="car_type_to" Mode="In" Type="String" />
+      <Parameter Name="car_from" Mode="In" Type="String" />
+      <Parameter Name="car_to" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_emp_profile_tab1_v2" ReturnType="Collection(StandardCanModel.sp_emp_profile_tab1_v2_Result)">
+      <Parameter Name="v_empcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_project_detail" ReturnType="Collection(StandardCanModel.sp_project_detail_Result)">
+      <Parameter Name="v_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_search_v2" ReturnType="Collection(StandardCanModel.sp_bookcar_search_v2_Result)">
+      <Parameter Name="v_cartype_from" Mode="In" Type="String" />
+      <Parameter Name="v_cartype_to" Mode="In" Type="String" />
+      <Parameter Name="v_carlicense_from" Mode="In" Type="String" />
+      <Parameter Name="v_carlicense_to" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_carreason_from" Mode="In" Type="String" />
+      <Parameter Name="v_carreason_to" Mode="In" Type="String" />
+      <Parameter Name="v_status_from" Mode="In" Type="String" />
+      <Parameter Name="v_status_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_search_v2" ReturnType="Collection(StandardCanModel.sp_bookroom_search_v2_Result)">
+      <Parameter Name="v_room_from" Mode="In" Type="String" />
+      <Parameter Name="v_room_to" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_status_from" Mode="In" Type="String" />
+      <Parameter Name="v_status_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookroom_search_v3" ReturnType="Collection(StandardCanModel.sp_bookroom_search_v3_Result)">
+      <Parameter Name="v_room_from" Mode="In" Type="String" />
+      <Parameter Name="v_room_to" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_status_from" Mode="In" Type="String" />
+      <Parameter Name="v_status_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_bookcar_search_v3" ReturnType="Collection(StandardCanModel.sp_bookcar_search_v3_Result)">
+      <Parameter Name="v_cartype_from" Mode="In" Type="String" />
+      <Parameter Name="v_cartype_to" Mode="In" Type="String" />
+      <Parameter Name="v_carlicense_from" Mode="In" Type="String" />
+      <Parameter Name="v_carlicense_to" Mode="In" Type="String" />
+      <Parameter Name="v_date_from" Mode="In" Type="String" />
+      <Parameter Name="v_date_to" Mode="In" Type="String" />
+      <Parameter Name="v_carreason_from" Mode="In" Type="String" />
+      <Parameter Name="v_carreason_to" Mode="In" Type="String" />
+      <Parameter Name="v_status_from" Mode="In" Type="String" />
+      <Parameter Name="v_status_to" Mode="In" Type="String" />
+      <Parameter Name="v_user_id" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_hardware_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="data1" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_expert_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="tel" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_expense_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="code" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_destination_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_room_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="sp_cartype_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="sp_car_search_Result">
+    <Property Type="String" Name="car_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_configmeeting_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Double" Name="timelimit" Nullable="true" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="score" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_holiday_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="date" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_traindestination_search_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_sh_search_Result">
+    <Property Type="String" Name="value" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_depart_search_Result">
+    <Property Type="String" Name="value" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_search_Result">
+    <Property Type="String" Name="emp_code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="emp_title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="emp_fname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="emp_lname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ds_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="md_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_level" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tab1_Result">
+    <Property Type="String" Name="code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="ds_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="md_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="level" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="shift" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="start_work" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="age_work" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="book_permit" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="book_permit_expire" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="boss_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="boss_tel" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="sc_credit" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="level_work" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="social_security" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fund" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cooperative" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="card_id" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="card_id_expire" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="birthday" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="age" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="sex" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="religion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="salary_account" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="blood_type" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="tel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="lineid" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="current_address" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tab2_Result">
+    <Property Type="String" Name="date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="shift" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="time_in" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="time_in_status" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="time_out" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="time_out_status" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="type" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tab3_Result">
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_day" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="reason" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="appr_status" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tab3_quota_Result">
+    <Property Type="String" Name="type_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cumulative" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="present" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="use" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="net" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tabcard_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="card_no" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="2" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tabwork_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="no2" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="grade" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tabbehavior_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="year" Nullable="true" MaxLength="4" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="score" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tabbehavior_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="year" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="score" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_department_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="tel" Nullable="false" MaxLength="20" />
+    <Property Type="Boolean" Name="dis_status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_bookroom_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="room_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="book_date" Nullable="true" MaxLength="22" />
+    <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="remark" Nullable="false" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_bookroom_emp_Result">
+    <Property Type="String" Name="emp_code" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="depart" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="checkin_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="checkin_time" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="checkin_status" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="BOOK_ROOM">
+    <Key>
+      <PropertyRef Name="BR_ID" />
+    </Key>
+    <Property Name="BR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="br_topic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="br_date" Type="DateTime" Precision="0" />
+    <Property Name="br_start_time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="br_stop_time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MRM_ID" Type="Int32" />
+    <Property Name="br_person_total" Type="Int32" />
+    <Property Name="br_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="br_status" Type="Int32" />
+    <Property Name="br_create_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="br_create_date" Type="DateTime" Precision="3" />
+    <Property Name="br_update_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="br_update_date" Type="DateTime" Precision="3" />
+    <Property Name="br_appr1_status" Type="Int32" />
+    <Property Name="br_appr1_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="br_appr1_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="br_appr1_date" Type="DateTime" Precision="3" />
+    <Property Name="br_appr2_status" Type="Int32" />
+    <Property Name="br_appr2_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="br_appr2_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="br_appr2_date" Type="DateTime" Precision="3" />
+    <Property Name="br_appr_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MAS_ROOM">
+    <Key>
+      <PropertyRef Name="MRM_ID" />
+    </Key>
+    <Property Name="MRM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MRM_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MRM_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MRM_STATUS" Type="Byte" />
+    <Property Name="MRM_CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MRM_CREATE_BY" Type="Int32" />
+    <Property Name="MRM_UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MRM_UPDATE_BY" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="sp_emp_search_byid_Result">
+    <Property Type="String" Name="emp_code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="depart" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="emp_tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_search_by_popup_Result">
+    <Property Type="String" Name="emp_code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="depart" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="emp_tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_car_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="car_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_carreason_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="sp_bookcar_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="car_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="car_license" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="req_by" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="appr_reason" Nullable="false" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_bookcar_emp_Result">
+    <Property Type="String" Name="emp_code" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="depart" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="checkin_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="checkin_time" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="checkin_status" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="BOOK_CAR">
+    <Key>
+      <PropertyRef Name="BC_ID" />
+    </Key>
+    <Property Name="BC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bc_topic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="bc_start_date" Type="DateTime" Precision="0" />
+    <Property Name="bc_start_time" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="bc_stop_date" Type="DateTime" Precision="0" />
+    <Property Name="bc_stop_time" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="bc_person_total" Type="Int32" />
+    <Property Name="MCT_ID" Type="Int32" />
+    <Property Name="MCA_ID" Type="Int32" />
+    <Property Name="MCR_ID" Type="Int32" />
+    <Property Name="MDT_ID" Type="Int32" />
+    <Property Name="bc_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="bc_appr_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="bc_status" Type="Int32" />
+    <Property Name="bc_create_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="bc_create_date" Type="DateTime" Precision="3" />
+    <Property Name="bc_update_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="bc_update_date" Type="DateTime" Precision="3" />
+    <Property Name="bc_appr_status" Type="Int32" />
+    <Property Name="bc_appr_by" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="bc_appr_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="sp_note_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ip" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ref_id" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_timeatt_realtime_search_Result">
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="time" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="272" />
+    <Property Type="String" Name="depart_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="node_name" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_regular_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="depart" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="171" />
+    <Property Type="String" Name="emp_tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_temporary_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="depart" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="171" />
+    <Property Type="String" Name="emp_tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_report_setting_search_Result">
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="config1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="config2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="config3" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="config4" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="config5" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_project_search_v2_Result">
+    <Property Type="String" Name="prj_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="year" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="prj_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="star_tdate" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="create_by" Nullable="false" MaxLength="251" />
+  </ComplexType>
+  <ComplexType Name="sp_formular_search_Result">
+    <Property Type="String" Name="TYPE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_formular_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="type_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <EntityType Name="MAS_FORMULA">
+    <Key>
+      <PropertyRef Name="MFL_ID" />
+    </Key>
+    <Property Name="MFL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MFL_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="MFL_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MFL_INPUT_TYPE" Type="Int32" />
+    <Property Name="MFL_STATUS" Type="Byte" />
+    <Property Name="MFL_CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MFL_CREATE_BY" Type="Int32" />
+    <Property Name="MFL_UPDATE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MFL_UPDATE_BY" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="sp_formularrange_search_Result">
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="score" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="display" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_formulavalue_search_Result">
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="value" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_department_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="tel" Nullable="false" MaxLength="20" />
+    <Property Type="Boolean" Name="dis_status" Nullable="true" />
+    <Property Type="String" Name="dis_status_dis" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="sp_project_course_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="year" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="project_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_type" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="create_by" Nullable="false" MaxLength="272" />
+  </ComplexType>
+  <ComplexType Name="sp_project_course_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="Int64" Name="no" Nullable="true" />
+    <Property Type="String" Name="year" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="project_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_type" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="create_by" Nullable="false" MaxLength="272" />
+  </ComplexType>
+  <ComplexType Name="sp_project_course_detail_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="project_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_id" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="formula_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="location_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="expert_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="file_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="remark" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="score1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score11" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score12" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score13" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score14" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_project_course_detail_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="project_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_id" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="formula_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="location_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="expert_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="file_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="remark" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="score1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score2" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score3" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score4" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score5" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_project_course_detail_v3_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="project_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_id" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="formula_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="location_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="expert_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="file_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="file_url" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="remark" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="score1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score2" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score3" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score4" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score5" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_search_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_course" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_emp" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_detail_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_type" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="MEP_NAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="cost_total" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_course" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_emp" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_course1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="total_emp1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_emp_Result">
+    <Property Type="String" Name="ref_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="emp_code" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="department" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="272" />
+    <Property Type="String" Name="emp_tel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="score_part_1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_2" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_3" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_4" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_5" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_cost_Result">
+    <Property Type="String" Name="ref_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="cost" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_cost_v2_Result">
+    <Property Type="String" Name="ref_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="cost_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="cost" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_detail_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="course_type" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="MEP_NAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="cost_total" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_schedule_course_emp_v2_Result">
+    <Property Type="String" Name="ref_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="emp_code" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="course_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="department" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="272" />
+    <Property Type="String" Name="emp_tel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="score_part_1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_2" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_3" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_4" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_part_5" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_total" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="score_result" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_regular_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="emp_code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="depart" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="171" />
+    <Property Type="String" Name="emp_tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <EntityType Name="interface_log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="module" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_log" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="update_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="sp_emp_temporary_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="depart" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="emp_code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="emp_name" Nullable="false" MaxLength="171" />
+    <Property Type="String" Name="emp_tel" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="emp_email" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_car_search_v3_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="car_type_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="car_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="detail" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_emp_profile_tab1_v2_Result">
+    <Property Type="String" Name="code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="ds_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="md_name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="level" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="shift" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="start_work" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="age_work" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="book_permit" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="book_permit_expire" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="boss_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="boss_tel" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="sc_credit" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="level_work" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="social_security" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fund" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cooperative" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="card_id" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="card_id_expire" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="birthday" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="age" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="sex" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="religion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="salary_account" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="blood_type" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="tel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="lineid" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="current_address" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="emp_status" Nullable="false" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="sp_project_detail_Result">
+    <Property Type="String" Name="prj_id" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="year" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="prj_name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="star_tdate" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="prj_detail" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="prj_status" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="create_by" Nullable="false" MaxLength="251" />
+  </ComplexType>
+  <ComplexType Name="sp_bookcar_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="car_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="car_license" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="req_by" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sts_color" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="appr_reason" Nullable="false" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_bookroom_search_v2_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="room_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="book_date" Nullable="true" MaxLength="22" />
+    <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sts_color" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="remark" Nullable="false" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_bookroom_search_v3_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="room_name" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="book_date" Nullable="true" MaxLength="22" />
+    <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sts_color" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="remark" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="create_by" Nullable="false" MaxLength="251" />
+  </ComplexType>
+  <ComplexType Name="sp_bookcar_search_v3_Result">
+    <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="start_date" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="stop_date" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="use_car_reason" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="car_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="car_license" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="req_by" Nullable="false" MaxLength="251" />
+    <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sts_color" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="appr_reason" Nullable="false" MaxLength="Max" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,215 @@
+﻿{
+   "ContextClassName": "StandardcanContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "StandardCanMobileAPI.Models",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOOK_CAR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOOK_CAR_EMP]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOOK_ROOM]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOOK_ROOM_DEVICE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOOK_ROOM_EMP]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOOK_TIME_STATUS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CNF_REPORT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CNF_ROOM]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CNF_ROOM_STATUS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_BEHAVIOR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_CARD]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_INOUT_SUMMARY]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_LEAVE_QUOTA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_LEAVE_SUMMARY]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_NOTE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_PROFILE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMP_WORKS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[interface_log]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_APPROVE_STATUS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_CAR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_CAR_REASON]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_CAR_TYPE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_COURSE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_DEPARTMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_DESTINATION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_EMPLOYEE_OFFSITE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_EXPENSE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_EXPERT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_FORMULA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_FORMULA_RANG]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_FORMULA_TYPE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_FORMULA_VALUE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_HARDWARE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_HOLIDAY]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_LEAVE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_NODE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_PROJECT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_ROOM]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_SECTION_HEAD]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MAS_TRAIN_DESTINATION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SCHEDULE_COURSE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SCHEDULE_COURSE_COST]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SCHEDULE_COURSE_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SCHEDULE_COURSE_EMP]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TIME_ATT_REALTIME]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[USER_GROUP]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[USERS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[xCNF_MEETING]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
+}

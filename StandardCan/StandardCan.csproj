@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D62FCD5-5DA7-4ED6-9D01-30B453444A2E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StandardCan</RootNamespace>
+    <AssemblyName>StandardCan</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>dll\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.7.1\lib\net45\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.7.1\lib\net45\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.7.1\lib\net45\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.9\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.8.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.11.1.0\lib\net40\Spire.License.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=7.1.10.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.11.1.0\lib\net40\Spire.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=11.1.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.11.1.0\lib\net40\Spire.XLS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.7.1\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="StandardCan.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StandardCan.edmx</DependentUpon>
+      <LastGenOutput>StandardCan.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="StandardCan.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StandardCan.edmx</DependentUpon>
+      <LastGenOutput>StandardCan.cs</LastGenOutput>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BOOK_CAR.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BOOK_ROOM.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CNF_ROOM.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CNF_ROOM_STATUS.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\activityController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\benefitsController.cs" />
+    <Compile Include="Controllers\bookCarController.cs" />
+    <Compile Include="Controllers\bookCarSubmitController.cs" />
+    <Compile Include="Controllers\bookRoomController.cs" />
+    <Compile Include="Controllers\bookRoomSubmitController.cs" />
+    <Compile Include="Controllers\book_room_configController.cs" />
+    <Compile Include="Controllers\carController.cs" />
+    <Compile Include="Controllers\carReasonController.cs" />
+    <Compile Include="Controllers\cartypeController.cs" />
+    <Compile Include="Controllers\configmeetingController.cs" />
+    <Compile Include="Controllers\dashBoardController.cs" />
+    <Compile Include="Controllers\departmentController.cs" />
+    <Compile Include="Controllers\destinationController.cs" />
+    <Compile Include="Controllers\empCheckInRegularController.cs" />
+    <Compile Include="Controllers\empCheckInTemporaryController.cs" />
+    <Compile Include="Controllers\employeeController.cs" />
+    <Compile Include="Controllers\expenseController.cs" />
+    <Compile Include="Controllers\expertController.cs" />
+    <Compile Include="Controllers\hardwareController.cs" />
+    <Compile Include="Controllers\holidayController.cs" />
+    <Compile Include="Controllers\imageSlideController.cs" />
+    <Compile Include="Controllers\ImportDataController.cs" />
+    <Compile Include="Controllers\newsController.cs" />
+    <Compile Include="Controllers\nodeController.cs" />
+    <Compile Include="Controllers\projectController.cs" />
+    <Compile Include="Controllers\projectCourseController.cs" />
+    <Compile Include="Controllers\projectFormularController.cs" />
+    <Compile Include="Controllers\projectTrainingScheduleController.cs" />
+    <Compile Include="Controllers\qrCodeController.cs" />
+    <Compile Include="Controllers\reportSettingController.cs" />
+    <Compile Include="Controllers\roomController.cs" />
+    <Compile Include="Controllers\scheduleCourseController.cs" />
+    <Compile Include="Controllers\timeAttRealtimeController.cs" />
+    <Compile Include="Controllers\timeAttRealtimeReportController.cs" />
+    <Compile Include="Controllers\traindestinationController.cs" />
+    <Compile Include="Controllers\userRoleController.cs" />
+    <Compile Include="EMP_PROFILE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Cipher.cs" />
+    <Compile Include="IMAGE_SLIDE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMPORT_DATA.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMPORT_SCORE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="interface_log.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jwt\JwtHelper.cs" />
+    <Compile Include="MAS_APPROVE_STATUS.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_BENEFITS.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_CAR.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_CAR_REASON.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_CAR_TYPE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_COURSE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_DEPARTMENT.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_DESTINATION.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_EXPENSE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_EXPERT.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_FORMULA.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_GLOBAL_CONFIG.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_HARDWARE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_PROGRAM.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_PROJECT.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAS_ROOM.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\activityModel.cs" />
+    <Compile Include="Models\benefitsModel.cs" />
+    <Compile Include="Models\bookCarModel.cs" />
+    <Compile Include="Models\book_room_configModel.cs" />
+    <Compile Include="Models\dashBoardModel.cs" />
+    <Compile Include="Models\imageSlideModel.cs" />
+    <Compile Include="Models\newsModel.cs" />
+    <Compile Include="Models\projectTrainingScheduleModel.cs" />
+    <Compile Include="Models\scheduleCourseModel.cs" />
+    <Compile Include="Models\projectCourseModel.cs" />
+    <Compile Include="Models\projectFormularModel.cs" />
+    <Compile Include="Models\projectModel.cs" />
+    <Compile Include="Models\reportSettingModel.cs" />
+    <Compile Include="Models\empCheckInModel.cs" />
+    <Compile Include="Models\timeAttRealModel.cs" />
+    <Compile Include="Models\carModel.cs" />
+    <Compile Include="Models\carReasonModel.cs" />
+    <Compile Include="Models\nodeModel.cs" />
+    <Compile Include="Models\departmentModel.cs" />
+    <Compile Include="Models\cartypeModel.cs" />
+    <Compile Include="Models\configmeetingModel.cs" />
+    <Compile Include="Models\destinationModel.cs" />
+    <Compile Include="Models\expenseModel.cs" />
+    <Compile Include="Models\expertModel.cs" />
+    <Compile Include="Models\hardwareModel.cs" />
+    <Compile Include="Models\holidayModel.cs" />
+    <Compile Include="Models\messageModel.cs" />
+    <Compile Include="Models\employeeModel.cs" />
+    <Compile Include="Models\bookRoomModel.cs" />
+    <Compile Include="Models\roomModel.cs" />
+    <Compile Include="Models\traindestinationModel.cs" />
+    <Compile Include="Models\ViewModels\JsonModel.cs" />
+    <Compile Include="Models\ViewModels\JsonWebToken.cs" />
+    <Compile Include="Models\ViewModels\RoleViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserViewModel.cs" />
+    <Compile Include="NEWS.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AuthenticationService.cs" />
+    <Compile Include="Service\benefitsService.cs" />
+    <Compile Include="Service\bookCarService.cs" />
+    <Compile Include="Service\book_room_configService.cs" />
+    <Compile Include="Service\activityService.cs" />
+    <Compile Include="Service\dashBoardService.cs" />
+    <Compile Include="Service\imageSlideService.cs" />
+    <Compile Include="Service\ImportDataService.cs" />
+    <Compile Include="Service\newsService.cs" />
+    <Compile Include="Service\projectTrainingScheduleService.cs" />
+    <Compile Include="Service\scheduleCourseService.cs" />
+    <Compile Include="Service\projectCourseService.cs" />
+    <Compile Include="Service\projectFormularService.cs" />
+    <Compile Include="Service\projectService.cs" />
+    <Compile Include="Service\reportSettingService.cs" />
+    <Compile Include="Service\empCheckInService.cs" />
+    <Compile Include="Service\SettingService.cs" />
+    <Compile Include="Service\timeAttRealService.cs" />
+    <Compile Include="Service\carService.cs" />
+    <Compile Include="Service\carReasonService.cs" />
+    <Compile Include="Service\nodeService.cs" />
+    <Compile Include="Service\departmentService.cs" />
+    <Compile Include="Service\cartypeService.cs" />
+    <Compile Include="Service\configmeetingService.cs" />
+    <Compile Include="Service\destinationService.cs" />
+    <Compile Include="Service\expenseService.cs" />
+    <Compile Include="Service\expertService.cs" />
+    <Compile Include="Service\hardwareService.cs" />
+    <Compile Include="Service\holidayService.cs" />
+    <Compile Include="Service\employeeService.cs" />
+    <Compile Include="Service\bookRoomService.cs" />
+    <Compile Include="Service\roomService.cs" />
+    <Compile Include="Service\traindestinationService.cs" />
+    <Compile Include="sp_bookcar_emp_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookcar_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookcar_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookcar_search_v3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookroom_emp_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookroom_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookroom_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_bookroom_search_v3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_calendar_booking_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_calendar_dashboard_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_carreason_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_cartype_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_car_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_car_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_car_search_v3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_configmeeting_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_department_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_department_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_depart_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_destination_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tab1_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tab1_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tab2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tab3_quota_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tab3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tabbehavior_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tabbehavior_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tabbehavior_search_v3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tabcard_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_profile_tabwork_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_regular_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_regular_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_search_byid_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_search_by_popup_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_status_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_temporary_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_emp_temporary_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_expense_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_expert_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_formularrange_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_formular_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_formular_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_formulavalue_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_hardware_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_holiday_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_masactivity_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_emp_ot_hours_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_emp_ot_quota_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_emp_profile_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_get_holiday_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_get_schedule_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_meeting_checkin_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_mb_meeting_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_note_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_course_detail_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_course_detail_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_course_detail_v3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_course_detail_v4_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_course_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_course_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_detail_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_project_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_report_setting_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_report_timeatt_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_report_timeatt_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_report_timeatt_v3_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_room_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_cost_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_cost_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_detail_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_detail_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_emp_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_emp_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_schedule_course_search_v2_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_sh_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_timeatt_realtime_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_traindestination_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_trainning_search_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_worklist_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardCan.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StandardCan.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardCan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StandardCan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StandardCan.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TIME_ATT_IMAGE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIME_ATT_REALTIME.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRAINING.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRAINING_EMP.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRAINING_EXPENSE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRAINING_EXPERT.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRAINING_ITEM.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_GROUP.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_ROLE.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="StandardCan.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StandardCan.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="StandardCan.edmx.diagram">
+      <DependentUpon>StandardCan.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
+    <Folder Include="dll\" />
+    <Folder Include="Views\expert\" />
+    <Folder Include="Views\userRole\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>26442</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:26442/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

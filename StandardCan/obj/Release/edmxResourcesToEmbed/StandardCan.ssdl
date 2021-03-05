@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StandardCanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BOOK_CAR">
+    <Key>
+      <PropertyRef Name="BC_ID" />
+    </Key>
+    <Property Name="BC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bc_topic" Type="text" />
+    <Property Name="bc_start_date" Type="date" />
+    <Property Name="bc_start_time" Type="nvarchar" MaxLength="5" />
+    <Property Name="bc_stop_date" Type="date" />
+    <Property Name="bc_stop_time" Type="nvarchar" MaxLength="5" />
+    <Property Name="bc_person_total" Type="int" />
+    <Property Name="MCT_ID" Type="int" />
+    <Property Name="MCA_ID" Type="int" />
+    <Property Name="MCR_ID" Type="int" />
+    <Property Name="MDT_ID" Type="int" />
+    <Property Name="bc_remark" Type="text" />
+    <Property Name="bc_appr_remark" Type="text" />
+    <Property Name="bc_status" Type="int" />
+    <Property Name="bc_create_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="bc_create_date" Type="datetime" />
+    <Property Name="bc_update_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="bc_update_date" Type="datetime" />
+    <Property Name="bc_appr_status" Type="int" />
+    <Property Name="bc_appr_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="bc_appr_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BOOK_ROOM">
+    <Key>
+      <PropertyRef Name="BR_ID" />
+    </Key>
+    <Property Name="BR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="br_topic" Type="text" />
+    <Property Name="br_date" Type="date" />
+    <Property Name="br_start_time" Type="nvarchar" MaxLength="50" />
+    <Property Name="br_stop_time" Type="nvarchar" MaxLength="50" />
+    <Property Name="MRM_ID" Type="int" />
+    <Property Name="br_person_total" Type="int" />
+    <Property Name="br_remark" Type="text" />
+    <Property Name="br_appr_remark" Type="text" />
+    <Property Name="br_status" Type="int" />
+    <Property Name="br_create_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="br_create_date" Type="datetime" />
+    <Property Name="br_update_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="br_update_date" Type="datetime" />
+    <Property Name="br_appr1_status" Type="int" />
+    <Property Name="br_appr1_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="br_appr1_remark" Type="text" />
+    <Property Name="br_appr1_date" Type="datetime" />
+    <Property Name="br_appr2_status" Type="int" />
+    <Property Name="br_appr2_by" Type="nvarchar" MaxLength="20" />
+    <Property Name="br_appr2_remark" Type="text" />
+    <Property Name="br_appr2_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="interface_log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="module" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_log" Type="text" />
+    <Property Name="update_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MAS_FORMULA">
+    <Key>
+      <PropertyRef Name="MFL_ID" />
+    </Key>
+    <Property Name="MFL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MFL_TYPE" Type="nvarchar" MaxLength="1" />
+    <Property Name="MFL_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="MFL_INPUT_TYPE" Type="int" />
+    <Property Name="MFL_STATUS" Type="tinyint" />
+    <Property Name="MFL_CREATE_DATE" Type="datetime" />
+    <Property Name="MFL_CREATE_BY" Type="int" />
+    <Property Name="MFL_UPDATE_DATE" Type="date" />
+    <Property Name="MFL_UPDATE_BY" Type="int" />
+  </EntityType>
+  <EntityType Name="MAS_ROOM">
+    <Key>
+      <PropertyRef Name="MRM_ID" />
+    </Key>
+    <Property Name="MRM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MRM_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="MRM_NAME" Type="nvarchar" MaxLength="300" />
+    <Property Name="MRM_STATUS" Type="tinyint" />
+    <Property Name="MRM_CREATE_DATE" Type="datetime" />
+    <Property Name="MRM_CREATE_BY" Type="int" />
+    <Property Name="MRM_UPDATE_DATE" Type="datetime" />
+    <Property Name="MRM_UPDATE_BY" Type="int" />
+  </EntityType>
+  <Function Name="sp_bookcar_delete_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookcar_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookcar_insert_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookcar_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_topic" Type="text" Mode="In" />
+    <Parameter Name="v_start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_start_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_stop_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_stop_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_person_total" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cartype_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_car_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_reason_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_dest_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_remark" Type="text" Mode="In" />
+    <Parameter Name="v_save_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_bookcar_save_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_remark" Type="text" Mode="In" />
+    <Parameter Name="v_user" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookcar_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_cartype_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cartype_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carlicense_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carlicense_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carreason_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carreason_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookcar_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_cartype_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cartype_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carlicense_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carlicense_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carreason_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carreason_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookcar_search_v3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_cartype_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cartype_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carlicense_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carlicense_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carreason_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_carreason_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_delete_device" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_delete_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_insert_device" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_device_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_insert_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_topic" Type="text" Mode="In" />
+    <Parameter Name="v_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_start_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_stop_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_room_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_person_total" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_remark" Type="text" Mode="In" />
+    <Parameter Name="v_save_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_bookroom_save_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_remark" Type="text" Mode="In" />
+    <Parameter Name="v_user" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_room_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_room_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_room_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_room_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_bookroom_search_v3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_room_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_room_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_cancelRoom_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_auto" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_car_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_car_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_car_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="car_type_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_type_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_to" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_car_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="car_type_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_type_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_to" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_car_search_v3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="car_type_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_type_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="car_to" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_car_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_carreason_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_carreason_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_carreason_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_carreason_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_cartype_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_cartype_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_cartype_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_cartype_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_configmeeting_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_configmeeting_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_detail" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_configmeeting_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_detail" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_configmeeting_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_detail" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_depart_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_department_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_department_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_department_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_tel" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_destination_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_destination_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_destination_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_destination_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode_start" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_stop" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sh_start" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sh_stop" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_start" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_stop" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_start" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status_stop" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_fname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_lname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_head_fname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_head_lname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tab1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tab1_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tab2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_stop_date" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tab3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_stop_date" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tab3_quota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabbehavior_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabbehavior_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabbehavior_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabbehavior_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_detail" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabcard_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabcard_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cardno" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabnote_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabnote_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_note" Type="text" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabwork_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabwork_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_profile_tabwork_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_empcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_no" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_grade" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_regular_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_regular_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_regular_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_regular_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_search_by_popup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sh_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_search_byid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_temporary_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_temporary_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_stop_date" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_temporary_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_fname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_lname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_emp_temporary_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_fname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_lname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_expense_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_expense_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_expense_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_expense_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_expert_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_expert_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_tel" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_expert_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_expert_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_tel" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formular_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="input_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_formular_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="input_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_formular_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formular_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formular_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_inputtype" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formularrange_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_range" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formularrange_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="formular_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="formular_no" Type="nvarchar" Mode="In" />
+    <Parameter Name="range_score" Type="nvarchar" Mode="In" />
+    <Parameter Name="display" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_formularrange_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formularvalue_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_value" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_formularvalue_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="formular_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_orderby" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_value" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_text" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_formulavalue_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hardware_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hardware_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_hardware_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hardware_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_holiday_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_year" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_node_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_node_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_ip" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_refid" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_node_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_ip" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_refid" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_note_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_userid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_course_detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_course_detail_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_course_detail_v3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_course_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_project_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_course_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_course_name" Type="text" Mode="In" />
+    <Parameter Name="v_formula_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_location_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_expert_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_file_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_file_base64" Type="text" Mode="In" />
+    <Parameter Name="v_remark" Type="text" Mode="In" />
+    <Parameter Name="v_score1" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score2" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score3" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score4" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score5" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_course_save_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_project_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_course_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_course_name" Type="text" Mode="In" />
+    <Parameter Name="v_formula_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_location_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_expert_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_file_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_file_base64" Type="text" Mode="In" />
+    <Parameter Name="v_remark" Type="text" Mode="In" />
+    <Parameter Name="v_score1" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score2" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score3" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score4" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score5" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_project_course_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="year_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_course_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="year_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_insert_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="stop_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_detail" Type="text" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_project_insert_v3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="stop_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_detail" Type="text" Mode="In" />
+    <Parameter Name="v_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_project_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="year_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_project_update_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="text" Mode="In" />
+    <Parameter Name="start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="stop_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_detail" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_report_setting_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_report" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_report_setting_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_report" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_room_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_room_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_room_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_room_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_cost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_cost_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_scd_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_cost_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_sc_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_exp_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cost" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_cost_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_detail_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_scd_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_token_update" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_detail_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_sc_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_cource_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_start_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_stop_time" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_total_course" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_scd_total_emp" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_token_update" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_schedule_course_detail_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_emp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_emp_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_scd_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_emp_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_scd_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_emp_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_part_1" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_part_2" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_part_3" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_part_4" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_part_5" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_total" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_score_result" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_emp_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_sc_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sc_name" Type="text" Mode="In" />
+    <Parameter Name="v_sc_start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sc_stop_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sc_total_course" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sc_total_emp" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_sc_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_schedule_course_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="year_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_course_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="stop_date" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_schedule_course_search_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="year_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="year_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="proj_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_course_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="start_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="stop_date" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_sh_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_timeatt_realtime_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_date_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_date_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_empcode_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_depart_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_fname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_lname" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_node_from" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_node_to" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_traindestination_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_traindestination_insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+    <Parameter Name="r_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_traindestination_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_traindestination_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_usrid" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="StandardCanModelStoreContainer">
+    <EntitySet Name="BOOK_CAR" EntityType="Self.BOOK_CAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BOOK_ROOM" EntityType="Self.BOOK_ROOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="interface_log" EntityType="Self.interface_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MAS_FORMULA" EntityType="Self.MAS_FORMULA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MAS_ROOM" EntityType="Self.MAS_ROOM" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
