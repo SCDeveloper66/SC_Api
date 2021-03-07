@@ -418,6 +418,9 @@
     <Compile Include="sp_bookcar_search_v3_Result.cs">
       <DependentUpon>StandardCan.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_bookroom_calendar_Result.cs">
+      <DependentUpon>StandardCan.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_bookroom_emp_Result.cs">
       <DependentUpon>StandardCan.tt</DependentUpon>
     </Compile>

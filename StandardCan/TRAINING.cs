@@ -31,6 +31,11 @@ namespace StandardCan
         public Nullable<int> CreateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<int> UpdateBy { get; set; }
+        public string TrainingNo { get; set; }
+        public Nullable<System.DateTime> TrainingDate { get; set; }
+        public string TrainingTime { get; set; }
+        public Nullable<int> MCS_ID { get; set; }
+        public Nullable<int> MRM_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRAINING_EMP> TRAINING_EMP { get; set; }

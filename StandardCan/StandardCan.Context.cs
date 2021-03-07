@@ -3247,5 +3247,18 @@ namespace StandardCan
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_score_outdoor", v_empcodeParameter, v_dateParameter, v_scoreParameter, v_detail_idParameter, user_idParameter);
         }
+    
+        public virtual ObjectResult<sp_bookroom_calendar_Result> sp_bookroom_calendar(string v_room_id, string v_user_id)
+        {
+            var v_room_idParameter = v_room_id != null ?
+                new ObjectParameter("v_room_id", v_room_id) :
+                new ObjectParameter("v_room_id", typeof(string));
+    
+            var v_user_idParameter = v_user_id != null ?
+                new ObjectParameter("v_user_id", v_user_id) :
+                new ObjectParameter("v_user_id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_bookroom_calendar_Result>("sp_bookroom_calendar", v_room_idParameter, v_user_idParameter);
+        }
     }
 }

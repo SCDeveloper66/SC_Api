@@ -85,5 +85,12 @@ namespace StandardCan.Models
         public List<dropdown> status { get; set; } = new List<dropdown>();
     }
 
+    public class calendarMeetingRoomViewModel
+    {
+        public string roomName { get; set; }
+        public string qrCode { get; set; }
+        public string roomTopic { get; set; }
+        public List<sp_bookroom_calendar_Result> dataList { get; set; } = new List<sp_bookroom_calendar_Result>();
+    }
 
 }

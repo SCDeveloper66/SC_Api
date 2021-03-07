@@ -443,10 +443,15 @@
             <PropertyRef Name="TrainingId" />
           </Key>
           <Property Name="TrainingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TrainingNo" Type="nvarchar" MaxLength="20" />
           <Property Name="TrainingName" Type="text" />
           <Property Name="TrainingDateFrom" Type="date" />
           <Property Name="TrainingDateTo" Type="date" />
+          <Property Name="TrainingDate" Type="date" />
+          <Property Name="TrainingTime" Type="nvarchar" MaxLength="5" />
           <Property Name="TrainingStatus" Type="tinyint" />
+          <Property Name="MCS_ID" Type="int" />
+          <Property Name="MRM_ID" Type="int" />
           <Property Name="CreateDate" Type="datetime" />
           <Property Name="CreateBy" Type="int" />
           <Property Name="UpdateDate" Type="datetime" />
@@ -734,6 +739,10 @@
           <Parameter Name="trans_id" Type="nvarchar" Mode="In" />
           <Parameter Name="r_sts" Type="nvarchar" Mode="InOut" />
           <Parameter Name="r_msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_bookroom_calendar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="v_room_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_bookroom_delete_device" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="v_id" Type="nvarchar" Mode="In" />
@@ -2697,6 +2706,10 @@
           <EntitySet Name="MAS_PROGRAM" EntityType="StandardCanModel.MAS_PROGRAM" />
           <EntitySet Name="USER_GROUP" EntityType="StandardCanModel.USER_GROUP" />
           <EntitySet Name="USER_ROLE" EntityType="StandardCanModel.USER_ROLE" />
+          <FunctionImport Name="sp_bookroom_calendar" ReturnType="Collection(StandardCanModel.sp_bookroom_calendar_Result)">
+            <Parameter Name="v_room_id" Mode="In" Type="String" />
+            <Parameter Name="v_user_id" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_hardware_search_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -3596,6 +3609,11 @@
           <NavigationProperty Name="TRAINING_EMP" Relationship="StandardCanModel.FK_TRAINING_EMP_TRAINING" FromRole="TRAINING" ToRole="TRAINING_EMP" />
           <NavigationProperty Name="TRAINING_EXPENSE" Relationship="StandardCanModel.FK_TRAINING_EXPENSE_TRAINING" FromRole="TRAINING" ToRole="TRAINING_EXPENSE" />
           <NavigationProperty Name="TRAINING_EXPERT" Relationship="StandardCanModel.FK_TRAINING_EXPERT_TRAINING" FromRole="TRAINING" ToRole="TRAINING_EXPERT" />
+          <Property Name="TrainingNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TrainingDate" Type="DateTime" Precision="0" />
+          <Property Name="TrainingTime" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="MCS_ID" Type="Int32" />
+          <Property Name="MRM_ID" Type="Int32" />
         </EntityType>
         <Association Name="FK_TRAINING_EMP_TRAINING">
           <End Type="StandardCanModel.TRAINING" Role="TRAINING" Multiplicity="1" />
@@ -4093,6 +4111,22 @@
           <Property Name="Update_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Update_By" Type="Int32" Nullable="false" />
         </EntityType>
+        <ComplexType Name="sp_bookroom_calendar_Result">
+          <Property Type="String" Name="id" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="no" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="room_name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="time_start" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="time_stop" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="person_total" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="sts_code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="sts_text" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sts_color" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="remark" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="create_by" Nullable="false" MaxLength="251" />
+          <Property Type="String" Name="color" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="topic" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="isCurrent" Nullable="false" MaxLength="1" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5209,6 +5243,11 @@
           <EntitySetMapping Name="TRAININGs">
             <EntityTypeMapping TypeName="StandardCanModel.TRAINING">
               <MappingFragment StoreEntitySet="TRAINING">
+                <ScalarProperty Name="MRM_ID" ColumnName="MRM_ID" />
+                <ScalarProperty Name="MCS_ID" ColumnName="MCS_ID" />
+                <ScalarProperty Name="TrainingTime" ColumnName="TrainingTime" />
+                <ScalarProperty Name="TrainingDate" ColumnName="TrainingDate" />
+                <ScalarProperty Name="TrainingNo" ColumnName="TrainingNo" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
@@ -5803,6 +5842,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_bookroom_calendar" FunctionName="StandardCanModel.Store.sp_bookroom_calendar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StandardCanModel.sp_bookroom_calendar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="no" ColumnName="no" />
+                <ScalarProperty Name="room_name" ColumnName="room_name" />
+                <ScalarProperty Name="time_start" ColumnName="time_start" />
+                <ScalarProperty Name="time_stop" ColumnName="time_stop" />
+                <ScalarProperty Name="person_total" ColumnName="person_total" />
+                <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+                <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+                <ScalarProperty Name="sts_color" ColumnName="sts_color" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="isCurrent" ColumnName="isCurrent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -47,6 +47,10 @@ namespace StandardCan.Controllers
                     result = service.search_all_calendar(value);
                     break;
 
+                case "search_room_calendar":
+                    result = service.search_room_calendar(value);
+                    break;
+
                 case "detail":
                     result = service.detail(value);
                     break;

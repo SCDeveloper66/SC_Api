@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using QRCoder;
 using StandardCan.jwt;
 using StandardCan.Models;
 
@@ -262,6 +266,57 @@ namespace StandardCan.Service
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        public calendarMeetingRoomViewModel search_room_calendar(bookRoomModel value)
+        {
+            try
+            {
+                calendarMeetingRoomViewModel result = new calendarMeetingRoomViewModel();
+                result.dataList = new List<sp_bookroom_calendar_Result>();
+                using (StandardCanEntities context = new StandardCanEntities())
+                {
+                    var masRoom = context.MAS_ROOM.SingleOrDefault(a =>a.MRM_ID.ToString() == value.id);
+                    result.roomName = masRoom?.MRM_NAME;
+                    
+                    result.dataList = context.sp_bookroom_calendar(value.id, value.user_id).ToList();
+                    var qrCodeRawData = result.dataList.FirstOrDefault(a => a.isCurrent == "0");
+                    if(qrCodeRawData != null)
+                    {
+                        var qrCodeData = String.Format("{0},{1},{2},{3}", value.id, DateTime.Now.ToString("dd/MM/yyyy"), qrCodeRawData.time_start, qrCodeRawData.time_stop);
+                        QRCodeGenerator _qrCode = new QRCodeGenerator();
+                        QRCodeData _qrCodeData = _qrCode.CreateQrCode(qrCodeData, QRCodeGenerator.ECCLevel.Q);
+                        QRCode qrCode = new QRCode(_qrCodeData);
+                        Bitmap qrCodeImage = qrCode.GetGraphic(20);
+                        var microsoftDateFormatSettings = new JsonSerializerSettings
+                        {
+                            DateParseHandling = DateParseHandling.None,
+                            DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                            Formatting = Formatting.Indented,
+                        };
+                        Bitmap newBitmap;
+                        newBitmap = new Bitmap(qrCodeImage);
+                        byte[] fileBytes = BitmapToBytesCode(newBitmap);
+                        result.qrCode = Convert.ToBase64String(fileBytes, 0, fileBytes.Length);
+                        result.roomTopic = qrCodeRawData.topic;
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private static Byte[] BitmapToBytesCode(Bitmap image)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                return stream.ToArray();
             }
         }
 
