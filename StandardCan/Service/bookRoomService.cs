@@ -281,7 +281,7 @@ namespace StandardCan.Service
                     result.roomName = masRoom?.MRM_NAME;
                     
                     result.dataList = context.sp_bookroom_calendar(value.id, value.user_id).ToList();
-                    var qrCodeRawData = result.dataList.FirstOrDefault(a => a.isCurrent == "0");
+                    var qrCodeRawData = result.dataList.FirstOrDefault(a => a.isCurrent == "1");
                     if(qrCodeRawData != null)
                     {
                         var qrCodeData = String.Format("{0},{1},{2},{3}", value.id, DateTime.Now.ToString("dd/MM/yyyy"), qrCodeRawData.time_start, qrCodeRawData.time_stop);
