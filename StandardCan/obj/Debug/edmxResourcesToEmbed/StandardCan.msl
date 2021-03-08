@@ -1111,6 +1111,11 @@
     <EntitySetMapping Name="TRAININGs">
       <EntityTypeMapping TypeName="StandardCanModel.TRAINING">
         <MappingFragment StoreEntitySet="TRAINING">
+          <ScalarProperty Name="MRM_ID" ColumnName="MRM_ID" />
+          <ScalarProperty Name="MCS_ID" ColumnName="MCS_ID" />
+          <ScalarProperty Name="TrainingTime" ColumnName="TrainingTime" />
+          <ScalarProperty Name="TrainingDate" ColumnName="TrainingDate" />
+          <ScalarProperty Name="TrainingNo" ColumnName="TrainingNo" />
           <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
           <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
           <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
@@ -1705,5 +1710,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_bookroom_calendar" FunctionName="StandardCanModel.Store.sp_bookroom_calendar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StandardCanModel.sp_bookroom_calendar_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="time_start" ColumnName="time_start" />
+          <ScalarProperty Name="time_stop" ColumnName="time_stop" />
+          <ScalarProperty Name="person_total" ColumnName="person_total" />
+          <ScalarProperty Name="sts_code" ColumnName="sts_code" />
+          <ScalarProperty Name="sts_text" ColumnName="sts_text" />
+          <ScalarProperty Name="sts_color" ColumnName="sts_color" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="topic" ColumnName="topic" />
+          <ScalarProperty Name="isCurrent" ColumnName="isCurrent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

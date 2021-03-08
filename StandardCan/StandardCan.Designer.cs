@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Nonay\Desktop\PTT\MobileAPI_20210301\StandardCan\StandardCan.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Nay Witchaya\Desktop\PTT\SC_Api\StandardCan\StandardCan.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

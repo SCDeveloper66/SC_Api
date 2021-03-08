@@ -438,10 +438,15 @@
       <PropertyRef Name="TrainingId" />
     </Key>
     <Property Name="TrainingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainingNo" Type="nvarchar" MaxLength="20" />
     <Property Name="TrainingName" Type="text" />
     <Property Name="TrainingDateFrom" Type="date" />
     <Property Name="TrainingDateTo" Type="date" />
+    <Property Name="TrainingDate" Type="date" />
+    <Property Name="TrainingTime" Type="nvarchar" MaxLength="5" />
     <Property Name="TrainingStatus" Type="tinyint" />
+    <Property Name="MCS_ID" Type="int" />
+    <Property Name="MRM_ID" Type="int" />
     <Property Name="CreateDate" Type="datetime" />
     <Property Name="CreateBy" Type="int" />
     <Property Name="UpdateDate" Type="datetime" />
@@ -729,6 +734,10 @@
     <Parameter Name="trans_id" Type="nvarchar" Mode="In" />
     <Parameter Name="r_sts" Type="nvarchar" Mode="InOut" />
     <Parameter Name="r_msg" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_bookroom_calendar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_room_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_user_id" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_bookroom_delete_device" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="v_id" Type="nvarchar" Mode="In" />
