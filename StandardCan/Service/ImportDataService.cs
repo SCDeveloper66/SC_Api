@@ -22,11 +22,11 @@ namespace StandardCan.Service
                 {
                     throw new Exception("Unauthorized Access");
                 }
-                var userId = JwtHelper.GetUserIdFromToken(user_id);
-                if (String.IsNullOrEmpty(userId))
-                {
-                    throw new Exception("Unauthorized Access");
-                }
+                var userId = user_id;
+                //if (String.IsNullOrEmpty(userId))
+                //{
+                //    throw new Exception("Unauthorized Access");
+                //}
 
                 byte[] fileData = null;
                 using (var binaryReader = new BinaryReader(postedFile.InputStream))
