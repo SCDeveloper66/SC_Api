@@ -50,6 +50,8 @@ namespace StandardCan.Controllers
                         result = service.importFileScore(fileType, fileId, user_id, postedFile);
                     else if (fileType == "3") // คะแนนแลกพ้อย
                         result = service.importFileScore(fileType, fileId, user_id, postedFile);
+                    else if (fileType == "4") // user role
+                        result = service.importUserRole(fileType, fileId, user_id, postedFile);
 
                     string json = js.Serialize(result);
                     response = Request.CreateResponse(HttpStatusCode.OK);
