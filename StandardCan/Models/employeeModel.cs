@@ -95,5 +95,16 @@ namespace StandardCan.Models
         public string text { get; set; }
     }
 
-
+    public class empLeave
+    {
+        public string no { get; set; }
+        public string id { get; set; }
+        public string emp_code { get; set; }
+        public string emp_name { get; set; }
+        public string leave_start { get; set; }
+        public string leave_stop { get; set; }
+        public string sts_color { get; set; }
+        public string sts_text { get; set; }
+        public string remark { get; set; }
+    }
 }

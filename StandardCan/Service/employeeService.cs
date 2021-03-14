@@ -224,7 +224,7 @@ namespace StandardCan.Service
                         emp_name = (emp.emp_fname ?? "") + " " + emp.emp_lname ?? "";
                     }
 
-                     
+
                 }
 
                 if (ret == -1)
@@ -235,9 +235,9 @@ namespace StandardCan.Service
                 else
                 {
                     result.status = "S";
-                    result.message = "บันทึกคะแนนของ " + emp_name + " สำเร็จ" ;
+                    result.message = "บันทึกคะแนนของ " + emp_name + " สำเร็จ";
                 }
-                
+
 
             }
             catch (Exception ex)
@@ -1005,5 +1005,56 @@ namespace StandardCan.Service
 
             return result;
         }
+
+        public List<empLeave> empLeave(employeeModel value)
+        {
+            List<empLeave> empLeaves = new List<empLeave>();
+            try
+            {
+                empLeaves.Add(new empLeave
+                {
+                    id = "1",
+                    no = "1",
+                    emp_code = "e001",
+                    emp_name = "fName001 lName001",
+                    leave_start = "2021-03-12",
+                    leave_stop = "2021-03-12",
+                    remark = "ลาพักร้อน",
+                    sts_color = "#ffa87d",
+                    sts_text = "Draft"
+                });
+                empLeaves.Add(new empLeave
+                {
+                    id = "2",
+                    no = "2",
+                    emp_code = "e002",
+                    emp_name = "fName002 lName002",
+                    leave_start = "2021-03-13",
+                    leave_stop = "2021-03-15",
+                    remark = "ลาพักร้อน",
+                    sts_color = "#ffa87d",
+                    sts_text = "Draft"
+                });
+                empLeaves.Add(new empLeave
+                {
+                    id = "3",
+                    no = "3",
+                    emp_code = "e003",
+                    emp_name = "fName003 lName003",
+                    leave_start = "2021-03-15",
+                    leave_stop = "2021-03-21",
+                    remark = "ลาพักร้อน",
+                    sts_color = "#ffa87d",
+                    sts_text = "Draft"
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return empLeaves;
+        }
+
     }
 }
