@@ -130,6 +130,10 @@ namespace StandardCan.Controllers
                     result = service.empLeave(value);
                     break;
 
+                case "leave-detail":
+                    result = service.empLeaveDetail(value);
+                    break;
+
                 default:
                     break;
 

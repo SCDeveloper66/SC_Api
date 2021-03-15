@@ -1032,8 +1032,8 @@ namespace StandardCan.Service
                     leave_start = "2021-03-13",
                     leave_stop = "2021-03-15",
                     remark = "ลาพักร้อน",
-                    sts_color = "#ffa87d",
-                    sts_text = "Draft"
+                    sts_color = "#FFE633",
+                    sts_text = "Waiting Approve"
                 });
                 empLeaves.Add(new empLeave
                 {
@@ -1044,8 +1044,8 @@ namespace StandardCan.Service
                     leave_start = "2021-03-15",
                     leave_stop = "2021-03-21",
                     remark = "ลาพักร้อน",
-                    sts_color = "#ffa87d",
-                    sts_text = "Draft"
+                    sts_color = "#16d39a",
+                    sts_text = "Approved"
                 });
             }
             catch (Exception ex)
@@ -1056,5 +1056,47 @@ namespace StandardCan.Service
             return empLeaves;
         }
 
+        public empLeave empLeaveDetail(employeeModel value)
+        {
+            empLeave empLeaves = new empLeave();
+            try
+            {
+                if(value.id == "1")
+                {
+                    empLeaves.id = "1";
+                    empLeaves.emp_code = "e001";
+                    empLeaves.emp_name = "fName001 lName001";
+                    empLeaves.leave_start = "12/03/2021";
+                    empLeaves.leave_stop = "12/03/2021";
+                    empLeaves.remark = "ลาพักร้อน";
+                    empLeaves.typeLeave = "Annual leave";
+                }
+                else if (value.id == "2")
+                {
+                    empLeaves.id = "2";
+                    empLeaves.emp_code = "e002";
+                    empLeaves.emp_name = "fName002 lName002";
+                    empLeaves.leave_start = "13/03/2021";
+                    empLeaves.leave_stop = "15/03/2021";
+                    empLeaves.remark = "ลาพักร้อน";
+                    empLeaves.typeLeave = "Annual leave";
+                }
+                else if (value.id == "3")
+                {
+                    empLeaves.id = "3";
+                    empLeaves.emp_code = "e003";
+                    empLeaves.emp_name = "fName003 lName003";
+                    empLeaves.leave_start = "15/03/2021";
+                    empLeaves.leave_stop = "21/03/2021";
+                    empLeaves.remark = "ลาพักร้อน";
+                    empLeaves.typeLeave = "Annual leave";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return empLeaves;
+        }
     }
 }

@@ -106,5 +106,6 @@ namespace StandardCan.Models
         public string sts_color { get; set; }
         public string sts_text { get; set; }
         public string remark { get; set; }
+        public string typeLeave { get; set; }
     }
 }
