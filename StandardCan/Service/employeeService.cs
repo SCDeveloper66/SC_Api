@@ -1070,7 +1070,8 @@ namespace StandardCan.Service
                     empLeaves.leave_stop = "12/03/2021";
                     empLeaves.remark = "ลาพักร้อน";
                     empLeaves.typeLeave = "Annual leave";
-                }
+                    empLeaves.sts_text = "Draft";
+    }
                 else if (value.id == "2")
                 {
                     empLeaves.id = "2";
@@ -1080,6 +1081,7 @@ namespace StandardCan.Service
                     empLeaves.leave_stop = "15/03/2021";
                     empLeaves.remark = "ลาพักร้อน";
                     empLeaves.typeLeave = "Annual leave";
+                    empLeaves.sts_text = "Waiting Approve";
                 }
                 else if (value.id == "3")
                 {
@@ -1090,6 +1092,7 @@ namespace StandardCan.Service
                     empLeaves.leave_stop = "21/03/2021";
                     empLeaves.remark = "ลาพักร้อน";
                     empLeaves.typeLeave = "Annual leave";
+                    empLeaves.sts_text = "Approved";
                 }
             }
             catch (Exception ex)
