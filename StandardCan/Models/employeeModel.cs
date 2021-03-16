@@ -107,5 +107,6 @@ namespace StandardCan.Models
         public string sts_text { get; set; }
         public string remark { get; set; }
         public string typeLeave { get; set; }
+        public string leave_over { get; set; }
     }
 }
