@@ -36,6 +36,10 @@ namespace StandardCan
         public string TrainingTime { get; set; }
         public Nullable<int> MCS_ID { get; set; }
         public Nullable<int> MRM_ID { get; set; }
+        public string TrainingTimeStart { get; set; }
+        public string TrainingTimeStop { get; set; }
+        public Nullable<int> MFL_ID { get; set; }
+        public string filename { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRAINING_EMP> TRAINING_EMP { get; set; }

@@ -26,5 +26,6 @@ namespace StandardCan
         public Nullable<int> Update_By { get; set; }
         public Nullable<System.DateTime> Update_Date { get; set; }
         public Nullable<System.DateTime> File_Date { get; set; }
+        public string remark_score { get; set; }
     }
 }

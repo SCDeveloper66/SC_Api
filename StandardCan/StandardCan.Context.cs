@@ -59,9 +59,9 @@ namespace StandardCan
         public virtual DbSet<BOOK_CAR> BOOK_CAR { get; set; }
         public virtual DbSet<IMPORT_DATA> IMPORT_DATA { get; set; }
         public virtual DbSet<IMPORT_SCORE> IMPORT_SCORE { get; set; }
-        public virtual DbSet<MAS_PROGRAM> MAS_PROGRAM { get; set; }
         public virtual DbSet<USER_GROUP> USER_GROUP { get; set; }
         public virtual DbSet<USER_ROLE> USER_ROLE { get; set; }
+        public virtual DbSet<MAS_PROGRAM> MAS_PROGRAM { get; set; }
     
         public virtual ObjectResult<sp_hardware_search_Result> sp_hardware_search(string v_name)
         {

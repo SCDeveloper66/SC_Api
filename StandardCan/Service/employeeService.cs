@@ -1085,7 +1085,7 @@ namespace StandardCan.Service
             empLeave empLeaves = new empLeave();
             try
             {
-                if(value.id == "1")
+                if (value.id == "1")
                 {
                     empLeaves.id = "1";
                     empLeaves.emp_code = "e001";
@@ -1096,7 +1096,7 @@ namespace StandardCan.Service
                     empLeaves.typeLeave = "Annual leave";
                     empLeaves.sts_text = "Submit";
                     empLeaves.leave_over = "N";
-    }
+                }
                 else if (value.id == "2")
                 {
                     empLeaves.id = "2";

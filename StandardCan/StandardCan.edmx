@@ -169,6 +169,7 @@
           <Property Name="File_Type" Type="varchar" MaxLength="50" />
           <Property Name="File_Id" Type="varchar" MaxLength="50" />
           <Property Name="Token_Id" Type="varchar" MaxLength="50" />
+          <Property Name="remark_score" Type="nvarchar" MaxLength="300" />
           <Property Name="Create_By" Type="int" />
           <Property Name="Create_Date" Type="datetime" />
           <Property Name="Update_By" Type="int" />
@@ -364,6 +365,7 @@
           <Property Name="Url_Path" Type="varchar" MaxLength="50" />
           <Property Name="Active" Type="bit" Nullable="false" />
           <Property Name="Order_Item" Type="int" />
+          <Property Name="Icon" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="MAS_PROJECT">
           <Key>
@@ -449,13 +451,17 @@
           <Property Name="TrainingDateTo" Type="date" />
           <Property Name="TrainingDate" Type="date" />
           <Property Name="TrainingTime" Type="nvarchar" MaxLength="5" />
+          <Property Name="TrainingTimeStart" Type="nvarchar" MaxLength="5" />
+          <Property Name="TrainingTimeStop" Type="nvarchar" MaxLength="5" />
           <Property Name="TrainingStatus" Type="tinyint" />
           <Property Name="MCS_ID" Type="int" />
+          <Property Name="MFL_ID" Type="int" />
           <Property Name="MRM_ID" Type="int" />
           <Property Name="CreateDate" Type="datetime" />
           <Property Name="CreateBy" Type="int" />
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="UpdateBy" Type="int" />
+          <Property Name="filename" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TRAINING_EMP">
           <Key>
@@ -2703,13 +2709,13 @@
             <Parameter Name="v_detail_id" Mode="In" Type="String" />
             <Parameter Name="user_id" Mode="In" Type="String" />
           </FunctionImport>
-          <EntitySet Name="MAS_PROGRAM" EntityType="StandardCanModel.MAS_PROGRAM" />
           <EntitySet Name="USER_GROUP" EntityType="StandardCanModel.USER_GROUP" />
           <EntitySet Name="USER_ROLE" EntityType="StandardCanModel.USER_ROLE" />
           <FunctionImport Name="sp_bookroom_calendar" ReturnType="Collection(StandardCanModel.sp_bookroom_calendar_Result)">
             <Parameter Name="v_room_id" Mode="In" Type="String" />
             <Parameter Name="v_user_id" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="MAS_PROGRAM" EntityType="StandardCanModel.MAS_PROGRAM" />
         </EntityContainer>
         <ComplexType Name="sp_hardware_search_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -3614,6 +3620,10 @@
           <Property Name="TrainingTime" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="MCS_ID" Type="Int32" />
           <Property Name="MRM_ID" Type="Int32" />
+          <Property Name="TrainingTimeStart" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TrainingTimeStop" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="MFL_ID" Type="Int32" />
+          <Property Name="filename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_TRAINING_EMP_TRAINING">
           <End Type="StandardCanModel.TRAINING" Role="TRAINING" Multiplicity="1" />
@@ -4077,18 +4087,7 @@
           <Property Name="Update_By" Type="Int32" />
           <Property Name="Update_Date" Type="DateTime" Precision="3" />
           <Property Name="File_Date" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="MAS_PROGRAM">
-          <Key>
-            <PropertyRef Name="Program_ID" />
-          </Key>
-          <Property Name="Program_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Program_Group_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Program_Group_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Program_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Url_Path" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Active" Type="Boolean" Nullable="false" />
-          <Property Name="Order_Item" Type="Int32" />
+          <Property Name="remark_score" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="USER_GROUP">
           <Key>
@@ -4127,6 +4126,19 @@
           <Property Type="String" Name="topic" Nullable="true" MaxLength="Max" />
           <Property Type="String" Name="isCurrent" Nullable="false" MaxLength="1" />
         </ComplexType>
+        <EntityType Name="MAS_PROGRAM">
+          <Key>
+            <PropertyRef Name="Program_ID" />
+          </Key>
+          <Property Name="Program_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Program_Group_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Program_Group_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Program_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Url_Path" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Order_Item" Type="Int32" />
+          <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5243,6 +5255,10 @@
           <EntitySetMapping Name="TRAININGs">
             <EntityTypeMapping TypeName="StandardCanModel.TRAINING">
               <MappingFragment StoreEntitySet="TRAINING">
+                <ScalarProperty Name="filename" ColumnName="filename" />
+                <ScalarProperty Name="MFL_ID" ColumnName="MFL_ID" />
+                <ScalarProperty Name="TrainingTimeStop" ColumnName="TrainingTimeStop" />
+                <ScalarProperty Name="TrainingTimeStart" ColumnName="TrainingTimeStart" />
                 <ScalarProperty Name="MRM_ID" ColumnName="MRM_ID" />
                 <ScalarProperty Name="MCS_ID" ColumnName="MCS_ID" />
                 <ScalarProperty Name="TrainingTime" ColumnName="TrainingTime" />
@@ -5789,6 +5805,7 @@
           <EntitySetMapping Name="IMPORT_SCORE">
             <EntityTypeMapping TypeName="StandardCanModel.IMPORT_SCORE">
               <MappingFragment StoreEntitySet="IMPORT_SCORE">
+                <ScalarProperty Name="remark_score" ColumnName="remark_score" />
                 <ScalarProperty Name="File_Date" ColumnName="File_Date" />
                 <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
                 <ScalarProperty Name="Update_By" ColumnName="Update_By" />
@@ -5806,19 +5823,6 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_update_score" FunctionName="StandardCanModel.Store.sp_update_score" />
           <FunctionImportMapping FunctionImportName="sp_update_score_outdoor" FunctionName="StandardCanModel.Store.sp_update_score_outdoor" />
-          <EntitySetMapping Name="MAS_PROGRAM">
-            <EntityTypeMapping TypeName="StandardCanModel.MAS_PROGRAM">
-              <MappingFragment StoreEntitySet="MAS_PROGRAM">
-                <ScalarProperty Name="Order_Item" ColumnName="Order_Item" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="Url_Path" ColumnName="Url_Path" />
-                <ScalarProperty Name="Program_Name" ColumnName="Program_Name" />
-                <ScalarProperty Name="Program_Group_Name" ColumnName="Program_Group_Name" />
-                <ScalarProperty Name="Program_Group_Id" ColumnName="Program_Group_Id" />
-                <ScalarProperty Name="Program_ID" ColumnName="Program_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="USER_GROUP">
             <EntityTypeMapping TypeName="StandardCanModel.USER_GROUP">
               <MappingFragment StoreEntitySet="USER_GROUP">
@@ -5862,6 +5866,20 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="MAS_PROGRAM">
+            <EntityTypeMapping TypeName="StandardCanModel.MAS_PROGRAM">
+              <MappingFragment StoreEntitySet="MAS_PROGRAM">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Order_Item" ColumnName="Order_Item" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Url_Path" ColumnName="Url_Path" />
+                <ScalarProperty Name="Program_Name" ColumnName="Program_Name" />
+                <ScalarProperty Name="Program_Group_Name" ColumnName="Program_Group_Name" />
+                <ScalarProperty Name="Program_Group_Id" ColumnName="Program_Group_Id" />
+                <ScalarProperty Name="Program_ID" ColumnName="Program_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

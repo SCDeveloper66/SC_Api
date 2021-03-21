@@ -153,6 +153,7 @@ namespace StandardCan.Service
                         programId = s.Program_ID,
                         programName = programList.SingleOrDefault(a =>a.Program_ID.ToString() == s.Program_ID)?.Program_Name,
                         url = programList.SingleOrDefault(a =>a.Program_ID.ToString() == s.Program_ID)?.Url_Path,
+                        icon = programList.SingleOrDefault(a =>a.Program_ID.ToString() == s.Program_ID)?.Icon,
                         }))),
                     });
 

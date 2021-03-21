@@ -21,5 +21,6 @@ namespace StandardCan
         public string Url_Path { get; set; }
         public bool Active { get; set; }
         public Nullable<int> Order_Item { get; set; }
+        public string Icon { get; set; }
     }
 }
