@@ -45,6 +45,14 @@ namespace StandardCan.Controllers
                     result = service.empLeaveDetail(value);
                     break;
 
+                case "search-machine":
+                    result = service.empMachine(value);
+                    break;
+
+                //case "machine-detail":
+                //    result = service.empLeaveDetail(value);
+                //    break;
+
                 default:
                     break;
 

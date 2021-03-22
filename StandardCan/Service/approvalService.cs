@@ -154,5 +154,57 @@ namespace StandardCan.Service
             }
             return empLeaves;
         }
+
+        public List<empMachine> empMachine(employeeModel value)
+        {
+            List<empMachine> empMachines = new List<empMachine>();
+            try
+            {
+                empMachines.Add(new empMachine
+                {
+                    id = "1",
+                    no = "1",
+                    emp_code = "e001",
+                    emp_name = "fName001 lName001",
+                    job_start = "2021-03-12",
+                    job_stop = "2021-03-12",
+                    machineName = "เครื่องจักร1",
+                    sts_color = "#ffa87d",
+                    sts_text = "Submit"
+                });
+                empMachines.Add(new empMachine
+                {
+                    id = "2",
+                    no = "2",
+                    emp_code = "e002",
+                    emp_name = "fName002 lName002",
+                    job_start = "2021-03-13",
+                    job_stop = "2021-03-15",
+                    machineName = "เครื่องจักร2",
+                    sts_color = "#FFE633",
+                    sts_text = "Approve"
+                });
+                empMachines.Add(new empMachine
+                {
+                    id = "3",
+                    no = "3",
+                    emp_code = "e003",
+                    emp_name = "fName003 lName003",
+                    job_start = "2021-03-15",
+                    job_stop = "2021-03-21",
+                    machineName = "เครื่องจักร3",
+                    sts_color = "#ffa87d",
+                    sts_text = "Submit"
+                });
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return empMachines;
+        }
+
     }
 }

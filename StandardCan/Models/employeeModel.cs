@@ -109,4 +109,19 @@ namespace StandardCan.Models
         public string typeLeave { get; set; }
         public string leave_over { get; set; }
     }
+
+    public class empMachine
+    {
+        public string no { get; set; }
+        public string id { get; set; }
+        public string emp_code { get; set; }
+        public string emp_name { get; set; }
+        public string job_start { get; set; }
+        public string job_stop { get; set; }
+        public string sts_color { get; set; }
+        public string sts_text { get; set; }
+        public string remark { get; set; }
+        public string machineName { get; set; }
+
+    }
 }
