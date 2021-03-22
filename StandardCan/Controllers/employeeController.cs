@@ -126,14 +126,6 @@ namespace StandardCan.Controllers
                     result = service.update_emp_score(value);
                     break;
 
-                case "search-leve":
-                    result = service.empLeave(value);
-                    break;
-
-                case "leave-detail":
-                    result = service.empLeaveDetail(value);
-                    break;
-
                 default:
                     break;
 

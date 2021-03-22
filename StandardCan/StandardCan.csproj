@@ -237,6 +237,7 @@
       <DependentUpon>StandardCan.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\activityController.cs" />
+    <Compile Include="Controllers\approvalController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\benefitsController.cs" />
     <Compile Include="Controllers\bookCarController.cs" />
@@ -377,6 +378,7 @@
     <Compile Include="NEWS.cs">
       <DependentUpon>StandardCan.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\approvalService.cs" />
     <Compile Include="Service\AuthenticationService.cs" />
     <Compile Include="Service\benefitsService.cs" />
     <Compile Include="Service\bookCarService.cs" />
